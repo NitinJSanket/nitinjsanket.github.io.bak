@@ -5,12 +5,12 @@ description:         "Lee Clement is a Ph.D. Candidate in Robotics at the Univer
 baseurl:             # /
 url: 			           # http://leeclem.net
 github:
-  repo:              "https://github.com/leeclemnet/leeclemnet.github.io"
+  repo:              "https://github.com/NitinJSanket/nitinjsanket.github.io"
 author:
   name:              "Nitin J. Sanket"
   email:             "nitin@cs.umd.edu"
-  twitter:           "zz"
-  instagram:         
+  twitter:           
+  instagram:         "firenitin"
   github:            "nitinjsanket"
   facebook:          
   linkedin:          "nitinjsanket"
