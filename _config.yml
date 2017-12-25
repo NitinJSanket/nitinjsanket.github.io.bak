@@ -2,7 +2,7 @@
 title:               "Nitin J. Sanket"
 tagline:             "Ph.D. Student in Computer Science at the University of Maryland, College Park"
 description:         "Ph.D. Student in Computer Science"
-baseurl:             
+baseurl:             # /
 url: 			           
 github:
   repo:              "https://github.com/NitinJSanket/nitinjsanket.github.io"
