@@ -1,9 +1,9 @@
 # Site Settings
 title:               "Nitin J. Sanket"
-tagline:             "Ph.D. Candidate in Computer Science at the University of Maryland, College Park"
-description:         "Lee Clement is a Ph.D. Candidate in Robotics at the University of Toronto, supervised by Prof. Jonathan Kelly. His research interests include mobile robotics, state estimation, computer vision and machine learning."
-baseurl:             # /
-url: 			           # http://leeclem.net
+tagline:             "Ph.D. Student in Computer Science at the University of Maryland, College Park"
+description:         ""
+baseurl:             
+url: 			           
 github:
   repo:              "https://github.com/NitinJSanket/nitinjsanket.github.io"
 author:
