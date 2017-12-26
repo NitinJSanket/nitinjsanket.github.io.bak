@@ -3,7 +3,7 @@ title:               "Lee Clement"
 tagline:             "Ph.D. Candidate in Robotics at the University of Toronto"
 description:         "Lee Clement is a Ph.D. Candidate in Robotics at the University of Toronto, supervised by Prof. Jonathan Kelly. His research interests include mobile robotics, state estimation, computer vision and machine learning."
 baseurl:             # /
-url:                 # http://leeclem.net
+url: 			           # http://leeclem.net
 github:
   repo:              "https://github.com/leeclemnet/leeclemnet.github.io"
 author:
