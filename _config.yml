@@ -1,12 +1,12 @@
 # Site Settings
 title:               "Nitin J. Sanket"
-tagline:             "Ph.D. Student in Computer Science at the University of Maryland, College Park"
-description:         "Ph.D. Student in Computer Science"
+tagline:             
+description:         
 baseurl:             # /
 url: 			           
 github:
   repo:              "https://github.com/NitinJSanket/nitinjsanket.github.io"
-author:
+author: 
   name:              "Nitin J. Sanket"
   email:             "nitin@cs.umd.edu"
   twitter:           
