@@ -2,7 +2,7 @@
 title: Guest Lecturer
 order: 1
 courses:
-  - code: CMSC828T
+  - code: CMSC 828T
     title: Vision, Planning and Control in Aerial Robotics
     terms: Fall 2017
     img: /assets/img/cmsc828t.JPG
