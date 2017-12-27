@@ -19,7 +19,14 @@ order: 3
         <img class="right" style="width: 40%; padding-left: 1em" src="{{course.img}}">
         {% endif %}
 
-        <b>{{ course.code }} &ndash; {{ course.title }}</b><br/>
+        {% if course.page %}
+            <br/>
+            <a href="{{ course.page }}"><b>{{ course.code }} &ndash; {{ course.title }}</b></a>
+        {% else %}
+            <b>{{ course.code }} &ndash; {{ course.title }}</b><br/>
+        {% endif %}
+
+        
         <i>{{ course.terms }}</i><br/><br/>
 
         {{ course.description }}<br/><br/>
@@ -27,11 +34,6 @@ order: 3
         {% if course.note %}
         <i>{{ course.note }}</i><br/>
         {% endif %}
-
-        {% if course.page %}
-         <a href="{{ course.page }}"><i class="fa fa-globe"></i>&nbsp;Course Page</a>&nbsp;<br/>
-        {% endif %}
-
 
     {% endfor %}
     </div><br/><hr/>
