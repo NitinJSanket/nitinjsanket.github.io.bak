@@ -21,7 +21,7 @@ order: 3
 
         {% if course.page %}
             <br/>
-            <a href="{{ course.page }}"><b>{{ course.code }} &ndash; {{ course.title }}</b></a>
+            <a href="{{ course.page }}"><b>{{ course.code }} &ndash; {{ course.title }}</b></a><br/>
         {% else %}
             <b>{{ course.code }} &ndash; {{ course.title }}</b><br/>
         {% endif %}
