@@ -11,6 +11,7 @@ publications:
         preprint: //ieeexplore.ieee.org/abstract/document/7043555/
 
   - date: 2014-03-20
+  	img: /assets/img/RBPSO.jpg
     title: "Recursive Binary Particle Swarm Optimization based Face Localization"
     authors: "Nitin J. Sanket, K. Manikantan, S. Ramachanran"
     venue: "In Proceedings of IEEE National Conference on Computer Vision, Pattern Recognition, Image Processing and Graphics (NCVPRIPG), 2013"
