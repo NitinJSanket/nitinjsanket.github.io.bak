@@ -70,7 +70,7 @@ For more information, visit my <a href="//scholar.google.com/citations?user={{ s
         {% endif %}
 
         {% if publication.links.page %}
-            <a href="{{ publication.links.page }}"><i class="fa fa-globe"></i>&nbsp;Page</a>&nbsp;
+            <a href="{{ publication.links.page }}"><i class="fa fa-globe"></i>&nbsp;Project Page</a>&nbsp;
         {% endif %}
 
         {% if publication.links %}

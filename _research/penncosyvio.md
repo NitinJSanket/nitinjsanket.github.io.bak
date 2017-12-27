@@ -9,5 +9,5 @@ publications:
     venue: "In Proceedings of IEEE International Conference on Robotics and Automation (ICRA), 2017"
     links:
         preprint: //ieeexplore.ieee.org/document/7989443/
-        page: //ieeexplore.ieee.org/document/7989443/
+        page: //daniilidis-group.github.io/penncosyvio/
 ---
