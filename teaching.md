@@ -28,8 +28,8 @@ order: 3
         <i>{{ course.note }}</i><br/>
         {% endif %}
 
-        {% if course.link %}
-         <a href="{{ publication.links.page }}"><i class="fa fa-globe"></i>&nbsp;Project Page</a>&nbsp;<br/>
+        {% if course.page %}
+         <a href="{{ course.page }}"><i class="fa fa-globe"></i>&nbsp;Course Page</a>&nbsp;<br/>
         {% endif %}
 
 
