@@ -12,7 +12,7 @@ order: 3
     <div><br/>
     <h3>{{ teaching.title }}</h3><br/>
 
-    {% assign sorted_courses = teaching.courses | sort:"code" %}
+    {% assign sorted_courses = teaching.courses %}
     {% for course in sorted_courses %}
 
         {% if course.img %}
