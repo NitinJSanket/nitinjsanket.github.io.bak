@@ -2,9 +2,17 @@
 title: Teaching Assistant
 order: 2
 courses:
-  - code: ROB 301
-    title: Introduction to Robotics
-    terms: Fall 2015-2017
-    img: /assets/img/rob301.png
-    description: This course is intended to provide an introduction and a very interdisciplinary experience to robotics.  The structure of the course is modular and reflects the perception-control-action paradigm of robotics.  The course, however, aims for breadth, covering an introduction to the key aspects of general robotic systems, rather than depth, which is available in later more advanced courses.  Applications addressed include robotics in space, autonomous terrestrial exploration, biomedical applications such as surgery and assistive robots, and personal robotics.  The course culminates in a hardware project centered on robot integration.
+  - code: CMSC 733
+    title: Computer Processing of Pictorial Information
+    terms: Spring 2017
+    img: /assets/img/cmsc733.jpg
+    description: This is an advanced course on graduate computer vision and computational photography. This course will explore image formation, image features, image segmentation, image stitching, image recognition, motion estimation, 3D point clouds and will touch upon basics of augmented reality.
+    page: //cs.umd.edu/class/spring2017/cmsc733/
+
+    - code: CMSC 426
+    title: Image Processing
+    terms: Fall 2016
+    img: /assets/img/cmsc733.jpg
+    description: This is an introductory course on computer vision and computational photography. This course will explore image formation, image features, image segmentation, image stitching, image recognition, motion estimation, 3D point clouds and will touch upon basics of augmented reality.
+    page: //cs.umd.edu/class/fall2016/cmsc426/
 ---
