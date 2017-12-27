@@ -6,4 +6,4 @@ Nitin's Personal Website
 - [ ] course projects
 - [ ] photography
 - [ ] slideshow photography
-- [ ] change icons on homepage
+- [x] change icons on homepage
