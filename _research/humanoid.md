@@ -1,7 +1,7 @@
 ---
 title: Humanoid
 order: 4
-img: /assets/img/champ.jpg
+img: /assets/img/champ.JPG
 publications:
   - date: 2014-02-10
     title: "CHAMP — A low cost modular humanoid platform"

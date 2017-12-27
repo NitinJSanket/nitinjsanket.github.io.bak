@@ -1,7 +1,7 @@
 ---
 title: Lane Detection
 order: 3
-img: /assets/img/lane.jpg
+img: /assets/img/lane.JPG
 publications:
   - date: 2013-06-06
     title: "Novel Approach to Lane and Path Detection in Unmanned Ground Vehicles"
