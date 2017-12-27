@@ -1,5 +1,5 @@
 ---
-title: Guest Lecturer
+title: Co-Instructor
 order: 1
 courses:
   - code: CMSC 828T
