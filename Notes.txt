@@ -1,1 +1,2 @@
 1. Create Favicon Icon from: https://realfavicongenerator.net/
+2. Pick colors from: https://www.w3schools.com/colors/colors_picker.asp
