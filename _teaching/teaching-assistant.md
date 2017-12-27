@@ -12,7 +12,7 @@ courses:
   - code: CMSC 426
     title: Image Processing
     terms: Fall 2016
-    img: /assets/img/cmsc426.jpg
+    img: /assets/img/cmsc426.png
     description: This is an introductory course on computer vision and computational photography. This course will explore image formation, image features, image segmentation, image stitching, image recognition, motion estimation, 3D point clouds and will touch upon basics of augmented reality.
     page: //cs.umd.edu/class/fall2016/cmsc426/
 ---
