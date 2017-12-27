@@ -69,6 +69,10 @@ For more information, visit my <a href="//scholar.google.com/citations?user={{ s
             <a href="{{ publication.links.video }}"><i class="fa fa-film"></i>&nbsp;Video</a>&nbsp;
         {% endif %}
 
+        {% if publication.links.page %}
+            <a href="{{ publication.links.page }}"><i class="fa fa-globe"></i>&nbsp;Page</a>&nbsp;
+        {% endif %}
+
         {% if publication.links %}
             <br/>
         {% endif %}
