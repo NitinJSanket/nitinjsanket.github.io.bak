@@ -1,5 +1,5 @@
 ---
-title: Face Recognition and Detection
+title: Graduate Projects (Doctoral Program)
 order: 1
 img: /assets/img/FRAFWT.jpg
 publications:
