@@ -5,5 +5,5 @@ img: /assets/img/FRAFWT.jpg
 publications:
   - date: 2015-02-19
     links:
-        doi: //nitinjsanket.wixsite.com/home
+        page: //nitinjsanket.wixsite.com/home
 ---
