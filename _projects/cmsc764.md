@@ -1,5 +1,5 @@
 ---
-title: CMSC 764: Advanced Numerical Optimization with Dr. Tom Goldstein
+title: CMSC 764 - Advanced Numerical Optimization with Dr. Tom Goldstein
 order: 2
 img: /assets/img/FRAFWT.jpg
 publications:

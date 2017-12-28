@@ -1,5 +1,5 @@
 ---
-title: MEAM 620: Advanced Robotics with Prof. Vijay Kumar and Prof. Kostas Daniilidis
+title: MEAM 620 - Advanced Robotics with Prof. Vijay Kumar and Prof. Kostas Daniilidis
 order: 4
 img: /assets/img/FRAFWT.jpg
 publications:

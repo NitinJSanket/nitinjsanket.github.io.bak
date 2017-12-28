@@ -1,5 +1,5 @@
 ---
-title: MEAM 520: Introduction to Robotics with Dr. Katherine J. Kuckenbecker
+title: MEAM 520 - Introduction to Robotics with Dr. Katherine J. Kuckenbecker
 order: 6
 img: /assets/img/FRAFWT.jpg
 publications:

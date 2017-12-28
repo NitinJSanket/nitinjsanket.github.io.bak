@@ -1,5 +1,5 @@
 ---
-title: MEAM 510: Design of Mechatronic Systems with Dr. Jonathan Fiene
+title: MEAM 510 - Design of Mechatronic Systems with Dr. Jonathan Fiene
 order: 7
 img: /assets/img/FRAFWT.jpg
 publications:
