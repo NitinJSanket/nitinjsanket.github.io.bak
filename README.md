@@ -5,3 +5,4 @@ Nitin's Personal Website
 - [ ] project page contents for all projects
 - [ ] course projects
 - [x] change icons on homepage
+- [ ] remove note on top bar
