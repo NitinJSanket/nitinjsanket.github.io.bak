@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Projects
-order: 2
+order: 4
 ---
 
 The following is a complete list of my scholarly publications, which touch on aerial robotics, deep learning and computer vision, among other things.
