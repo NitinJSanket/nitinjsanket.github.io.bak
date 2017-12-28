@@ -1,6 +1,6 @@
 ---
-title: CIS 581: Computer Vision with Prof. Jianbo Shi
-order: 6
+title: Depth From Single Image
+order: 1
 img: /assets/img/FRAFWT.jpg
 publications:
   - date: 2015-02-19

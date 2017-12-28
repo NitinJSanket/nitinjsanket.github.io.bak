@@ -1,6 +1,6 @@
 ---
-title: CIS 581: Computer Vision with Prof. Jianbo Shi
-order: 6
+title: CMSC 764: Advanced Numerical Optimization with Dr. Tom Goldstein
+order: 2
 img: /assets/img/FRAFWT.jpg
 publications:
   - date: 2015-02-19

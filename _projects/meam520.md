@@ -1,5 +1,5 @@
 ---
-title: CIS 581: Computer Vision with Prof. Jianbo Shi
+title: MEAM 520: Introduction to Robotics with Dr. Katherine J. Kuckenbecker
 order: 6
 img: /assets/img/FRAFWT.jpg
 publications:

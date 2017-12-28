@@ -1,6 +1,6 @@
 ---
-title: CIS 581: Computer Vision with Prof. Jianbo Shi
-order: 6
+title: MEAM 510: Design of Mechatronic Systems with Dr. Jonathan Fiene
+order: 7
 img: /assets/img/FRAFWT.jpg
 publications:
   - date: 2015-02-19

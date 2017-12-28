@@ -1,6 +1,6 @@
 ---
 title: Moksha UGV
-order: 4
+order: 10
 img: /assets/img/moksha.JPG
 publications:
   - date: 2014-05-01

@@ -1,6 +1,6 @@
 ---
 title: CLARA
-order: 3
+order: 9
 img: /assets/img/clara.JPG
 publications:
   - date: 2014-05-01
