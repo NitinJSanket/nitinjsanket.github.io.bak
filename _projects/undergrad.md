@@ -1,19 +1,15 @@
 ---
 title: Undergraduate Projects
 order: 3
-img: /assets/img/FRAFWT.jpg
+img: /assets/img/clara.JPG
 publications:
-  - date: 2015-02-19
-    title: "Face recognition using adaptive filter wavelet transform based feature extraction"
-    authors: "Nitin J. Sanket, Vyshak A. V., K. Manikantan, S. Ramachanran"
-    venue: "In Proceedings of IEEE International Conference on Science Engineering and Management Research (ICSEMR), 2014"
+  - date: 2014-05-01
+    title: "Cognitive Learning Assisted Robotic Arm (CLARA)"
+    authors: "Naveen N. Murthy, Nitin J. Sanket, Raghunandana R., Vyshak A. V., M. S. Srinivas"
     links:
-        preprint: //ieeexplore.ieee.org/abstract/document/7043555/
-
-  - date: 2014-03-20
-    title: "Recursive Binary Particle Swarm Optimization based Face Localization"
-    authors: "Nitin J. Sanket, K. Manikantan, S. Ramachanran"
-    venue: "In Proceedings of IEEE National Conference on Computer Vision, Pattern Recognition, Image Processing and Graphics (NCVPRIPG), 2013"
-    links:
-      preprint: //ieeexplore.ieee.org/abstract/document/6776227/
+        preprint: //assets/docs/clara.pdf
+        poster: //assets/docs/claraposter.pdf
+        video: //youtube.com/watch?v=Skme0Y8C83k&t=23s
+        award: Won second place in the south east asian R10 IEEE congress' Demo!T competition
+        page: //project/clara.shtml
 ---

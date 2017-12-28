@@ -3,6 +3,7 @@ layout: page
 title: Projects
 order: 4
 ---
+<hr/>
 
 <div>
 {% assign sorted_projects = site.projects | sort:"order" %}

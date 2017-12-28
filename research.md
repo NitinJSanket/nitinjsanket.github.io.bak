@@ -3,6 +3,7 @@ layout: page
 title: Research
 order: 2
 ---
+<hr/>
 
 The following is a complete list of my scholarly publications, which touch on aerial robotics, deep learning and computer vision, among other things.
 
