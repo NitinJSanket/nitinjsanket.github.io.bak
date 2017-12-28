@@ -1,9 +1,6 @@
 ---
-title: Course Projects during Doctoral Program at UMD
+title: PhD Course Projects 
 order: 1
 img: /assets/img/FRAFWT.jpg
-publications:
-  - date: 2015-02-19
-    links:
-        page: //nitinjsanket.wixsite.com/home
+link: //nitinjsanket.wixsite.com/home
 ---
