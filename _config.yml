@@ -30,4 +30,5 @@ plugins:             [jekyll-paginate]
 collections:
   - research
   - teaching
+  - projects
   - service
