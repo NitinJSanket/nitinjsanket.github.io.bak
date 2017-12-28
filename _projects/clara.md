@@ -1,5 +1,5 @@
 ---
-title: Undergraduate Projects
+title: CLARA
 order: 3
 img: /assets/img/clara.JPG
 publications:
@@ -11,5 +11,4 @@ publications:
         preprint: /assets/docs/clara.pdf
         poster: /assets/docs/claraposter.pdf
         video: //youtube.com/watch?v=Skme0Y8C83k&t=23s
-        page: /project/clara.shtml
 ---
