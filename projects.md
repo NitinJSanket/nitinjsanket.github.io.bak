@@ -16,7 +16,7 @@ order: 4
     <h3> <a href="{{ project.link }}">{{ project.title }}</a></h3><br/>
     
     {% if project.img %}
-        <img class="right" style="width: 40%; padding-left: 1em" src="{{ project.img }}">
+        <img class="center" style="width: 40%; padding-left: 1em" src="{{ project.img }}">
     {% endif %}
 
     </div>
