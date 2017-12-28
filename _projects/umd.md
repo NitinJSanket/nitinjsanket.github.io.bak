@@ -1,5 +1,5 @@
 ---
-title: &#64;University of Maryland, College Park
+title: At University of Maryland, College Park
 order: 1
 link: //nitinjsanket.wix.com/home
 img: /assets/img/umdlogo.jpg
