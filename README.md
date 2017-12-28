@@ -6,3 +6,4 @@ Nitin's Personal Website
 - [ ] course projects
 - [x] change icons on homepage
 - [ ] remove note on top bar
+
