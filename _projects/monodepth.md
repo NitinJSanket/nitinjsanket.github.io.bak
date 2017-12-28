@@ -1,5 +1,5 @@
 ---
-title: Depth From Single Image
+title: Depth From Single Image using a Deep CNN
 order: 1
 img: /assets/img/FRAFWT.jpg
 publications:
