@@ -1,6 +1,5 @@
 ---
-title: PhD Course Projects 
+title: University of Maryland, College Park
 order: 1
 img: /assets/img/FRAFWT.jpg
-link: //nitinjsanket.wixsite.com/home
 ---
