@@ -1,6 +1,6 @@
 ---
 title: Computer Vision and Computational Geometry
-order: 2
+order: 3
 img: /assets/img/cv.jpg
 publications:
   - date: 2015-02-19

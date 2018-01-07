@@ -1,6 +1,6 @@
 ---
 title: Deep Learning and Machine Learning
-order: 1
+order: 2
 img: /assets/img/ml.png
 publications:
   - date: 2017-09-30

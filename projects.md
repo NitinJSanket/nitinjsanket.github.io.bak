@@ -5,7 +5,7 @@ order: 4
 ---
 <hr/>
 
-The following is a complete list of my academic projects sorted by domain.
+The following is a complete list of my academic projects sorted by different areas like robotics, deep learning and computer vision.
 
 <hr/>
 
