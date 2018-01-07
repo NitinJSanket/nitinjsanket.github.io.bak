@@ -11,42 +11,42 @@ publications:
         page: //ieeexplore.ieee.org/abstract/document/7043555/
         code: //ieeexplore.ieee.org/abstract/document/7043555/
 
-  - date: 2015-02-19
+  - date: 2015-02-18
     title: "Quadrotor Control using offboard and on-board localization"
     authors: "Nitin J. Sanket"
     links:
         page: //ieeexplore.ieee.org/abstract/document/7043555/
         code: //ieeexplore.ieee.org/abstract/document/7043555/
 
-  - date: 2015-02-19
+  - date: 2015-02-17
     title: "Centralized and Decentralized Multi-robot path planning"
     authors: "Nitin J. Sanket"
     links:
         page: //ieeexplore.ieee.org/abstract/document/7043555/
         code: //ieeexplore.ieee.org/abstract/document/7043555/
 
-  - date: 2014-03-20
+  - date: 2014-03-16
     title: "Simultaneous Localization and Mapping (SLAM)"
     authors: "Nitin J. Sanket"
     links:
       page: //ieeexplore.ieee.org/abstract/document/7043555/
       code: //ieeexplore.ieee.org/abstract/document/7043555/
 
-  - date: 2014-03-19
+  - date: 2014-03-15
     title: "PandUBot - The waiter robot"
     authors: "Ankit Vora, Bhavya Gupta, Nitin J. Sanket, Paritosh Kelkar, Sarath Kumar Barathi"
     links:
       page: //ieeexplore.ieee.org/abstract/document/7043555/
       code: //ieeexplore.ieee.org/abstract/document/7043555/
 
-  - date: 2014-03-19
+  - date: 2014-03-14
     title: "Unscented Kalman Filter for 6DOF pose estimation and panorama stitching"
     authors: "Nitin J. Sanket"
     links:
       page: //ieeexplore.ieee.org/abstract/document/7043555/
       code: //ieeexplore.ieee.org/abstract/document/7043555/
 
-  - date: 2015-02-19
+  - date: 2015-02-12
     title: "Moksha Unmanned Ground Vehicle"
     authors: "IGVC 2012 Team at MSRIT"
     links:
