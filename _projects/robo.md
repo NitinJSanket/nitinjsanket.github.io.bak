@@ -1,6 +1,6 @@
 ---
 title: Robotics
-order: 2
+order: 3
 img: /assets/img/robo.jpg
 publications:
   - date: 2015-02-19
