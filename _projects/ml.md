@@ -1,5 +1,5 @@
 ---
-title: Visual Sun Detection for Accurate Visual Odometry
+title: Deep Learning and Machine Learning
 order: 2
 img: /assets/img/ml.png
 publications:
