@@ -10,7 +10,7 @@ The following is a complete list of my academic projects sorted by domain.
 <hr/>
 
 <div>
-{% assign sorted_projects = site.research | sort:"order" %}
+{% assign sorted_projects = site.projects | sort:"order" %}
 
 {% for project in sorted_projects %}
 
