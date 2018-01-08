@@ -1,13 +1,14 @@
 ---
 title: Deep Learning and Machine Learning
 order: 2
-img: /assets/img/ml.png
+
 publications:
   - date: 2017-09-30
     title: "Depth From Single Image using a Deep CNN"
     authors: "Nitin J. Sanket*, Chahat Deep Singh*"
     note: "*Equal contribution"
     links:
+        img: /assets/img/ml.png
         page: /404.html
         code: //github.com/NitinJSanket/GapAssesmentCNN
 
@@ -15,6 +16,7 @@ publications:
     title: "Neural Network from Scratch"
     authors: "Nitin J. Sanket"
     links:
+        img: /assets/img/ml.png
         page: /404.html
         code: /404.html
   

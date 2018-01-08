@@ -72,6 +72,10 @@ The following is a complete list of my academic projects sorted by different are
             <a href="{{ publication.links.page }}"><i class="fa fa-globe"></i>&nbsp;Project Page</a>&nbsp;
         {% endif %}
 
+        {% if publication.links.img %}
+        <img class="right" style="width: 40%; padding-left: 1em" src="{{ publication.links.img }}">
+        {% endif %}
+
         {% if publication.links %}
             <br/>
         {% endif %}
