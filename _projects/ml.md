@@ -8,7 +8,7 @@ publications:
     authors: "Nitin J. Sanket*, Chahat Deep Singh*"
     note: "*Equal contribution"
     links:
-        page: //ieeexplore.ieee.org/abstract/document/7043555/
+        page: /404.html
         code: //ieeexplore.ieee.org/abstract/document/7043555/
 
   - date: 2014-03-20
