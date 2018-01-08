@@ -32,6 +32,12 @@ The following is a complete list of my academic projects sorted by different are
         {% else %}
             <b>{{ publication.title }}</b>
         {% endif %}
+
+        {% if publication.links.img %}
+        <img class="right" style="width: 40%; padding-left: 1em" src="{{ publication.links.img }}">
+        {% endif %}
+
+        
         <br/>
 
         <i>{{ publication.authors }}</i>
@@ -47,6 +53,7 @@ The following is a complete list of my academic projects sorted by different are
         {% if publication.award %}
             <b>{{ publication.award }}</b><br/>
         {% endif %}
+
 
         {% if publication.links.preprint %}
             <a href="{{ publication.links.preprint }}"><i class="fa fa-file-text-o"></i>&nbsp;Paper</a>&nbsp;
@@ -70,10 +77,6 @@ The following is a complete list of my academic projects sorted by different are
 
         {% if publication.links.page %}
             <a href="{{ publication.links.page }}"><i class="fa fa-globe"></i>&nbsp;Project Page</a>&nbsp;
-        {% endif %}
-
-        {% if publication.links.img %}
-        <img class="right" style="width: 40%; padding-left: 1em" src="{{ publication.links.img }}">
         {% endif %}
 
         {% if publication.links %}
