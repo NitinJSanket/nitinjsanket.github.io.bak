@@ -25,7 +25,7 @@ publications:
     authors: "Sabaritha Sekar*, Nitin J. Sanket*, Sarath Kumar Barathi*"
     note: "*Equal contribution"
     links:
-      img: /project/meam620/p3/capt.PNG
+      img: /project/meam620/p3/capt.png
       preprint: /project/meam620/p3/P3Report.pdf
       video: //youtube.com/watch?v=vxlR1C6s1EY&feature=youtu.be
 
@@ -33,7 +33,7 @@ publications:
     title: "Simultaneous Localization and Mapping (SLAM)"
     authors: "Nitin J. Sanket"
     links:
-      img: /project/ese650/p4/slam.PNG
+      img: /project/ese650/p4/slam.png
       preprint: /project/ese650/p4/nitinsan_project4.pdf
       code: //github.com/NitinJSanket/ESE650Project4
 
@@ -42,7 +42,7 @@ publications:
     authors: "Ankit Vora*, Bhavya Gupta*, Nitin J. Sanket*, Paritosh Kelkar*, Sarath Kumar Barathi*"
     note: "*Equal contribution"
     links: 
-      img: /project/pandu/pandu2.PNG
+      img: /project/pandu/pandu2.png
       video: //youtube.com/playlist?list=PL69yiSB1LFN1YwY1TEVolzEg0DHCJ3xbR
       page: //alliance.seas.upenn.edu/~cis700ii/dynamic/team1/
 
@@ -50,7 +50,7 @@ publications:
     title: "Unscented Kalman Filter for 6DOF pose estimation and panorama stitching"
     authors: "Nitin J. Sanket"
     links:
-      img: /project/ese650/p2/ukf.PNG
+      img: /project/ese650/p2/ukf.png
       preprint: /project/ese650/p2/nitinsan_project2.pdf
       code: //github.com/NitinJSanket/ESE650Project2
 

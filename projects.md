@@ -20,7 +20,7 @@ The following is a complete list of my academic projects sorted by different are
     <h3>{{ project.title }}</h3><br/>
     
     {% if project.img %}
-        <img class="right" style="height: 100px; padding-left: 1em" src="{{ project.img }}">
+        <img class="right" style="height: 100; padding-left: 1em" src="{{ project.img }}">
     {% endif %}
 
     {% assign sorted_pubs = project.publications | sort:"date" %}

@@ -14,7 +14,7 @@ publications:
     title: "Object Reconstruction and 6DOF object pose estimation using ICP"
     authors: "Nitin J. Sanket"
     links:
-      img: /project/ese650/p6/p6.PNG
+      img: /project/ese650/p6/p6.png
       preprint: /project/ese650/p6/nitinsan_project6.pdf
       page: /404.html
       code: /404.html
@@ -24,7 +24,7 @@ publications:
     title: "Face Replacement"
     authors: "Nitin J. Sanket, Adarsh Vakkaleri Sateesh"
     links:
-      img: /project/cis581/p4/p4.PNG
+      img: /project/cis581/p4/p4.png
       poster: //prezi.com/gfzbtx191dqp/?utm_campaign=share&utm_medium=copy&rc=ex0share
       page: /404.html
       code: //github.com/NitinJSanket/CIS581Project4
@@ -33,7 +33,7 @@ publications:
     title: "Face Morphing"
     authors: "Nitin J. Sanket"
     links:
-      img: /project/cis581/p2/p2.PNG
+      img: /project/cis581/p2/p2.png
       page: /404.html
       code: //github.com/NitinJSanket/CIS581Project2
 
@@ -41,7 +41,7 @@ publications:
     title: "Automatic Panorama Stitching"
     authors: "Nitin J. Sanket"
     links:
-      img: /project/cis581/p3/p3.PNG
+      img: /project/cis581/p3/p3.png
       poster: //prezi.com/lhi_deq89tb8/?utm_campaign=share&utm_medium=copy&rc=ex0share
       page: /404.html
       code: //github.com/NitinJSanket/CIS581Project3
