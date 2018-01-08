@@ -8,7 +8,7 @@ publications:
     authors: "Nitin J. Sanket*, Chahat Deep Singh*"
     note: "*Equal contribution"
     links:
-        img: /assets/img/ml.png
+        img: /project/depthsingleimage/depthsingleimage.png
         page: /404.html
         code: //github.com/NitinJSanket/GapAssesmentCNN
 
@@ -16,14 +16,14 @@ publications:
     title: "Neural Network from Scratch"
     authors: "Nitin J. Sanket"
     links:
-        img: /assets/img/cv.jpg
-        page: /404.html
+        img: /project/nnetscratch/nnetscratch.png
         code: /404.html
   
   - date: 2014-03-18
     title: "Gender Prediction Using Twitter Data"
     authors: "Vidur Bhatnagar, Nitin J. Sanket, Sarath Kumar Barathi"
     links:
+        img: /project/cis520/images/teaser.PNG
         preprint: /project/cis520/CIS520Report.pdf
         page: /project/cis520.shtml
 
@@ -31,6 +31,7 @@ publications:
     title: "Learning the roads using Imitation Learning"
     authors: "Nitin J. Sanket"
     links:
+        img: /project/ese650/p5/p5.PNG
         preprint: /project/ese650/p5/nitinsan_project5.pdf
         page: /404.html
         code: /404.html
@@ -39,6 +40,7 @@ publications:
     title: "Gesture Recognition from IMU data using Hidden Markov Model"
     authors: "Nitin J. Sanket"
     links:
+        img: /project/ese650/p3/hmm.png
         preprint: /project/ese650/p3/nitinsan_project3.pdf
         page: /404.html
         code: //github.com/NitinJSanket/ESE650Project3
@@ -47,6 +49,7 @@ publications:
     title: "Colored Barrel Detection using Gaussian Mixture Model"
     authors: "Nitin J. Sanket"
     links:
+        img: /project/ese650/p1/gmm.PNG
         preprint: /project/ese650/p1/nitinsan_project1.pdf
         page: /404.html
         code: //github.com/NitinJSanket/ESE650Project1
