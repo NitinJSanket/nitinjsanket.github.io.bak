@@ -1,7 +1,7 @@
 ---
 title: Robotics
 order: 1
-img: /assets/img/robo.jpg
+
 publications:
   - date: 2015-02-19
     title: "Quadrotor flying through a known Window"
@@ -16,7 +16,7 @@ publications:
     authors: "Guan Sun*, Nitin J. Sanket*, Caio Cesar R. Mucchiani*"
     note: "*Equal contribution"
     links:
-      img: project/meam620/p1/quadctrl.jpg
+      img: /project/meam620/p1/quadctrl.jpg
       preprint: /project/meam620/p1/P1Report.pdf
       video: /404.html
 
@@ -42,7 +42,7 @@ publications:
     authors: "Ankit Vora*, Bhavya Gupta*, Nitin J. Sanket*, Paritosh Kelkar*, Sarath Kumar Barathi*"
     note: "*Equal contribution"
     links: 
-      img: /project/pandu/pandu.PNG
+      img: /project/pandu/pandu2.PNG
       video: //youtube.com/playlist?list=PL69yiSB1LFN1YwY1TEVolzEg0DHCJ3xbR
       page: //alliance.seas.upenn.edu/~cis700ii/dynamic/team1/
 
