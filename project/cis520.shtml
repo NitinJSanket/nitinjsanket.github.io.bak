@@ -150,7 +150,7 @@
             <table align=center width=650>
               <center><h1>Report</h1></center>
               <tr>
-                <td style="padding:1em"><a href="./cis520/CIS520Report.pdf"><img style="height:180px" src="./cis520/images/paper_thumb.png"/></a></td>
+                <td style="padding:1em"><a href="./cis520/CIS520Report.pdf"><img style="height:180px" src="./cis520/images/paper_thumb.PNG"/></a></td>
                 <td style="padding:1em"><span style="font-size:14pt">Vidur Bhatnagar, Nitin J. Sanket, Sarath Kumar Barathi.<br><br>
                     Gender Prediction Using Twitter Data <br> </span>
                 </td>
