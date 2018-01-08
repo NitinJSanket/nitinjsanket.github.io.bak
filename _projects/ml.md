@@ -16,7 +16,7 @@ publications:
     title: "Neural Network from Scratch"
     authors: "Nitin J. Sanket"
     links:
-        img: /assets/img/cv.png
+        img: /assets/img/cv.PNG
         page: /404.html
         code: /404.html
   
