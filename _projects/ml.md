@@ -8,8 +8,7 @@ publications:
     authors: "Nitin J. Sanket*, Chahat Deep Singh*"
     note: "*Equal contribution"
     links:
-        page: /404.html
-        code: //ieeexplore.ieee.org/abstract/document/7043555/
+        code: //github.com/NitinJSanket/GapAssesmentCNN
 
   - date: 2014-03-20
     title: "Neural Network from Scratch"
@@ -22,8 +21,8 @@ publications:
     title: "Gender Prediction Using Twitter Data"
     authors: "Vidur Bhatnagar, Nitin J. Sanket, Sarath Kumar Barathi"
     links:
+        preprint: //ieeexplore.ieee.org/abstract/document/7043555/
         page: //ieeexplore.ieee.org/abstract/document/7043555/
-        code: //ieeexplore.ieee.org/abstract/document/7043555/
 
   - date: 2014-03-17
     title: "Learning the roads using Imitation Learning"

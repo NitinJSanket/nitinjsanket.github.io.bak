@@ -1,0 +1,175 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+    body {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight:300;
+        font-size:18px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1100px;
+    }
+
+    h1 {
+        font-weight:300;
+    }
+
+    .disclaimerbox {
+        background-color: #eee;
+        border: 1px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+        padding: 20px;
+    }
+
+    video.header-vid {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    img.header-img {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    img.rounded {
+        border: 1px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    a:link,a:visited
+    {
+        color: #1367a7;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #208799;
+    }
+
+    td.dl-link {
+        height: 160px;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .vert-cent {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    hr
+    {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(10, 10, 10, 0),
+    rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0));
+        margin: 1em 0 1em 0;
+    }
+</style>
+
+<html>
+  <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10550309-6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10550309-6');
+</script>
+        <title>Gender Prediction Using Twitter Data</title>
+        <meta property="og:title" content="CIS520" />	
+  </head>
+
+  <body>
+    <br>
+    <center>
+      <span style="font-size:42px">Gender Prediction Using Twitter Data
+	</span>
+    </center>
+
+    <br><br>
+      <table align=center width=900px>
+       <tr>
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="http://www.vidurbhatnagar.com/">Vidur Bhatnagar</a></span>
+        </center>
+        </td>
+
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="https://nitinjsanket.github.io/">Nitin J. Sanket</a></span>
+        </center>
+        </td>
+
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="http://www.sarathkumarbarathi.com">Sarath Kumar Barathi</a></span>
+        </center>
+        </td>
+     </tr>
+    </table>
+
+    <br>
+    <table align=center width=700px>
+       <tr>
+        <td align=center width=100px>
+        <center>
+          <span style="font-size:20px">University of Pennsylvania</span><br></center>
+        </td>
+     </tr>
+    </table>
+
+            <br>
+            <table align=center width=500px>
+                <tr>
+                    <td width=300px>
+                      <center>
+                          <a href="./cis520/images/teaser.png"><img src = "./cis520/images/teaser.png" height="300px"></img></href></a><br>
+                    </center>
+                    </td>
+            </table>
+
+            <br>
+	    The goal of this project was to predict the gender of a person using the user’s twitter data which was extracted using Twitter API. The data included tweets of a particular person, profile picture and other derived features namely, age, smile, orientation of face, type of glasses worn, and how much percentage of the picture is occupied by the person’s face. Using this data, our team built several models which were finally ensembled to create a model with fairly high accuracy to predict the gender, which helped us in topping the test-set leaderboard. However, we could not replicate our performance on the validation set due to size and time constraints.
+            <br><br>
+            <hr>
+            <table align=center width=650>
+              <center><h1>Report</h1></center>
+              <tr>
+                <td style="padding:1em"><a href="./cis520/CIS520Report.pdf"><img style="height:180px" src="./cis520/images/paper_thumb.png"/></a></td>
+                <td style="padding:1em"><span style="font-size:14pt">Vidur Bhatnagar, Nitin J. Sanket, Sarath Kumar Barathi.<br><br>
+                    Gender Prediction Using Twitter Data <br> </span>
+                </td>
+              </tr>
+            </table>
+            <br>
+
+            <table align=center width=180px>
+              <tr>
+                <td><span style="font-size:14pt"><center>
+                      <a href="./cis520/CIS520Report.pdf">[pdf]</a>
+                </center></td>
+		
+                <td><span style="font-size:14pt"><center>
+                      <a href="./cis520/bibtex.txt">[Bibtex]</a>
+                </center></td>
+              </tr>
+            </table>
+            <br>
+        <br><br>
+</body>
+</html>
