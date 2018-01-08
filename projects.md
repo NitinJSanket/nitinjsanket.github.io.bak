@@ -18,10 +18,6 @@ The following is a complete list of my academic projects sorted by different are
     <br/>
     
     <h3>{{ project.title }}</h3><br/>
-    
-    {% if project.img %}
-        <img class="right" style="height: 100; padding-left: 1em" src="{{ project.img }}">
-    {% endif %}
 
     {% assign sorted_pubs = project.publications | sort:"date" %}
 
@@ -34,7 +30,7 @@ The following is a complete list of my academic projects sorted by different are
         {% endif %}
 
         {% if publication.links.img %}
-        <img class="right" style="width: 40%; padding-left: 1em" src="{{ publication.links.img }}">
+        <img class="right" style="width: 100; padding-left: 1em" src="{{ publication.links.img }}">
         {% endif %}
 
         
