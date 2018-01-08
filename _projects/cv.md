@@ -14,7 +14,7 @@ publications:
     title: "Object Reconstruction and 6DOF object pose estimation using ICP"
     authors: "Nitin J. Sanket"
     links:
-      img: /project/ese650/p6/p6.png
+      img: /project/ese650/p6/p6.PNG
       preprint: /project/ese650/p6/nitinsan_project6.pdf
       page: /404.html
       code: /404.html

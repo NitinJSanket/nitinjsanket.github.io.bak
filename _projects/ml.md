@@ -31,7 +31,7 @@ publications:
     title: "Learning the roads using Imitation Learning"
     authors: "Nitin J. Sanket"
     links:
-        img: /project/ese650/p5/p5.png
+        img: /project/ese650/p5/p5.PNG
         preprint: /project/ese650/p5/nitinsan_project5.pdf
         page: /404.html
         code: /404.html
@@ -49,7 +49,7 @@ publications:
     title: "Colored Barrel Detection using Gaussian Mixture Model"
     authors: "Nitin J. Sanket"
     links:
-        img: /project/ese650/p1/gmm.png
+        img: /project/ese650/p1/gmm.PNG
         preprint: /project/ese650/p1/nitinsan_project1.pdf
         page: /404.html
         code: //github.com/NitinJSanket/ESE650Project1
