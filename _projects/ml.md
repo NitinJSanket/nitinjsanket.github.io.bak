@@ -21,8 +21,8 @@ publications:
     title: "Gender Prediction Using Twitter Data"
     authors: "Vidur Bhatnagar, Nitin J. Sanket, Sarath Kumar Barathi"
     links:
-        preprint: //ieeexplore.ieee.org/abstract/document/7043555/
-        page: //ieeexplore.ieee.org/abstract/document/7043555/
+        preprint: /project/cis520/CIS520Report.pdf
+        page: /project/cis520.shtml
 
   - date: 2014-03-17
     title: "Learning the roads using Imitation Learning"
