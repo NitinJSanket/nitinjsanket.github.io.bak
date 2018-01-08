@@ -8,14 +8,15 @@ publications:
     authors: "Nitin J. Sanket*, Chahat Deep Singh*"
     note: "*Equal contribution"
     links:
+        page: /404.html
         code: //github.com/NitinJSanket/GapAssesmentCNN
 
   - date: 2014-03-20
     title: "Neural Network from Scratch"
     authors: "Nitin J. Sanket"
     links:
-        page: //ieeexplore.ieee.org/abstract/document/7043555/
-        code: //ieeexplore.ieee.org/abstract/document/7043555/
+        page: /404.html
+        code: /404.html
   
   - date: 2014-03-18
     title: "Gender Prediction Using Twitter Data"
@@ -28,20 +29,23 @@ publications:
     title: "Learning the roads using Imitation Learning"
     authors: "Nitin J. Sanket"
     links:
-        page: //ieeexplore.ieee.org/abstract/document/7043555/
-        code: //ieeexplore.ieee.org/abstract/document/7043555/
+        preprint: /project/ese650/p5/nitinsan_project5.pdf
+        page: /404.html
+        code: /404.html
 
   - date: 2014-03-16
     title: "Gesture Recognition from IMU data using Hidden Markov Model"
     authors: "Nitin J. Sanket"
     links:
-        page: //ieeexplore.ieee.org/abstract/document/7043555/
-        code: //ieeexplore.ieee.org/abstract/document/7043555/
+        preprint: /project/ese650/p3/nitinsan_project3.pdf
+        page: /404.html
+        code: //github.com/NitinJSanket/ESE650Project3
 
   - date: 2014-03-15
     title: "Colored Barrel Detection using Gaussian Mixture Model"
     authors: "Nitin J. Sanket"
     links:
-        page: //ieeexplore.ieee.org/abstract/document/7043555/
-        code: //ieeexplore.ieee.org/abstract/document/7043555/
+        preprint: /project/ese650/p1/nitinsan_project1.pdf
+        page: /404.html
+        code: //github.com/NitinJSanket/ESE650Project1
 ---
