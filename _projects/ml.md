@@ -37,7 +37,7 @@ publications:
         code: /404.html
 
   - date: 2014-03-16
-    title: "Gesture Recognition from IMU data using Hidden Markov Model"
+    title: "Gesture Recognition using Hidden Markov Model"
     authors: "Nitin J. Sanket"
     links:
         img: /project/ese650/p3/hmm.png

@@ -9,6 +9,7 @@ publications:
     note: "*Equal contribution"
     links:
       img: /project/quadwindow/quadwindow.jpg
+      right: 1
       video: /404.html
 
   - date: 2015-02-18

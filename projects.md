@@ -30,10 +30,13 @@ The following is a complete list of my academic projects sorted by different are
         {% endif %}
 
         {% if publication.links.img %}
-        <img class="right" style="height: 6em; padding-left: 1em" src="{{ publication.links.img }}">
+            {% if publication.links.right %}
+                <img class="right" style="height: 6em; padding-left: 1em" src="{{ publication.links.img }}">
+            {% else %}
+                <img class="left" style="height: 6em; padding-left: 1em" src="{{ publication.links.img }}">
+            {% endif %}
         {% endif %}
 
-        
         <br/>
 
         <i>{{ publication.authors }}</i>
