@@ -12,13 +12,13 @@ publications:
       video: /404.html
 
   - date: 2015-02-18
-    title: "Quadrotor Control using offboard and on-board localization"
+    title: "Quadrotor Control using off-board and on-board localization"
     authors: "Guan Sun*, Nitin J. Sanket*, Caio Cesar R. Mucchiani*"
     note: "*Equal contribution"
     links:
       img: /project/meam620/p1/quadctrl.jpg
       preprint: /project/meam620/p1/P1Report.pdf
-      video: /404.html
+      video: //youtu.be/Nxcq23g9dC8
 
   - date: 2015-02-17
     title: "Centralized and Decentralized Multi-robot path planning"

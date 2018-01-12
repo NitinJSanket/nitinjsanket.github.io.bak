@@ -9,7 +9,6 @@ publications:
     note: "*Equal contribution"
     links:
         img: /project/depthsingleimage/depthsingleimage.png
-        page: /404.html
         code: //github.com/NitinJSanket/GapAssesmentCNN
 
   - date: 2014-03-20
@@ -33,8 +32,7 @@ publications:
     links:
         img: /project/ese650/p5/p5.PNG
         preprint: /project/ese650/p5/nitinsan_project5.pdf
-        page: /404.html
-        code: /404.html
+        code: //github.com/NitinJSanket/ESE650Project5
 
   - date: 2014-03-16
     title: "Gesture Recognition using Hidden Markov Model"
@@ -42,7 +40,6 @@ publications:
     links:
         img: /project/ese650/p3/hmm.png
         preprint: /project/ese650/p3/nitinsan_project3.pdf
-        page: /404.html
         code: //github.com/NitinJSanket/ESE650Project3
 
   - date: 2014-03-15
@@ -51,6 +48,5 @@ publications:
     links:
         img: /project/ese650/p1/gmm.PNG
         preprint: /project/ese650/p1/nitinsan_project1.pdf
-        page: /404.html
         code: //github.com/NitinJSanket/ESE650Project1
 ---
