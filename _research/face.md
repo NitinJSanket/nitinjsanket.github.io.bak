@@ -1,6 +1,6 @@
 ---
 title: Face Recognition and Detection
-order: 2
+order: 3
 img: /assets/img/FRAFWT.jpg
 publications:
   - date: 2015-02-19

@@ -1,6 +1,6 @@
 ---
 title: PennCOSYVIO
-order: 1
+order: 2
 img: /assets/img/trajectory_animation.gif
 publications:
   - date: 2017-07-24

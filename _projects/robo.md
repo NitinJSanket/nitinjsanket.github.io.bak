@@ -5,7 +5,7 @@ order: 1
 publications:
   - date: 2015-02-19
     title: "Quadrotor flying through a known Window"
-    authors: "Nitin J. Sanket*, Chahat Deep Singh*, Yuxin Ma"
+    authors: "Nitin J. Sanket*, Chahat Deep Singh*"
     note: "*Equal contribution"
     links:
       img: /project/quadwindow/quadwindow.jpg

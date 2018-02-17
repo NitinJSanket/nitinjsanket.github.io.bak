@@ -1,6 +1,6 @@
 ---
 title: Humanoid
-order: 4
+order: 5
 img: /assets/img/champ.JPG
 publications:
   - date: 2014-02-10
