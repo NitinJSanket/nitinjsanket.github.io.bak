@@ -1,7 +1,7 @@
 ---
 title: GapFlyt
 order: 1
-img: /assets/img/trajectory_animation.gif
+img: /assets/img/gapflyt.gif
 publications:
   - date: 2017-07-24
     title: "GapFlyt: Active Vision Based Minimalist Structure-less Gap Detection For Quadrotor Flight"
