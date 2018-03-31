@@ -1,6 +1,6 @@
 ---
 title: GapFlyt
-order: 1
+order: 2
 img: /assets/img/gapflyt.gif
 publications:
   - date: 2017-07-24
