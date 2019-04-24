@@ -1,8 +1,8 @@
 ---
 layout: page
 mathjax: true
-title: Tutorials
-order: 3
+title: Test
+permalink: /2019/proj/p4/
 ---
 
 AAAAA $$\mathcal{A}$$
