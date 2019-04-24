@@ -4,6 +4,4 @@ title: Tutorials
 order: 3
 ---
 
-AAAAA
-
-$$\mathcal{A}$$
+AAAAA $$\mathcal{A}$$
