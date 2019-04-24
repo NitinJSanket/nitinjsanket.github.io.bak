@@ -3,6 +3,13 @@ title: Teaching Assistant
 order: 2
 courses:
   - code: CMSC 733
+    title: Classical and Deep Learning Approaches for Geometric Computer Vision
+    terms: Spring 2019
+    img: /assets/img/DL.jpeg
+    description: This is an advanced course on graduate computer vision and computational photography. This course will explore image formation, image features, image segmentation, image stitching, image recognition, motion estimation, 3D point clouds and will touch upon basics of augmented reality. This course is heavily redesigned this time to showcase how to model classical 3D geometry problems using Deep Learning. 
+    page: //prg.cs.umd.edu/cmsc733
+
+  - code: CMSC 733
     title: Computer Processing of Pictorial Information
     terms: Spring 2017
     img: /assets/img/cmsc733.jpg
