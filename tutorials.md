@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Service
-order: 6
+title: Tutorials
+order: 3
 ---
 
 <hr/>

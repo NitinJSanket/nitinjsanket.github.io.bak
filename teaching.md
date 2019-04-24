@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Teaching
-order: 3
+order: 4
 ---
 
 <hr/>

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Projects
-order: 4
+order: 5
 ---
 <hr/>
 
