@@ -25,6 +25,7 @@ markdown:            kramdown
 highlighter:         rouge
 permalink:           pretty
 plugins:             [jekyll-paginate]
+mathjax: 	     true
 
 # Collections
 collections:
