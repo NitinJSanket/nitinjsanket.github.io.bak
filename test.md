@@ -2,7 +2,7 @@
 layout: default
 mathjax: true
 title: Test
-permalink: /2019/proj/p4/test.html
+permalink: test.html
 sitemap: 
   exclude: 'yes' 
 ---
