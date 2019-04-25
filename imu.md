@@ -8,6 +8,7 @@ sitemap:
 
 ## Table of Contents: 
 
+<br>
 - [What is an IMU?](#whatisanimu)
 - [Complementary Filter](#cf)
 
