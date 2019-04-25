@@ -1,6 +1,5 @@
 ---
-layout: default
-mathjax: true
+layout: page
 title: Test
 permalink: test.html
 sitemap: 
