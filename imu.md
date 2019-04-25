@@ -6,7 +6,9 @@ sitemap:
   exclude: 'yes' 
 ---
 
-## Table of Contents:
+## Table of Contents: 
+
+<br>
 - [What is an IMU?](#whatisanimu)
 - [Complementary Filter](#cf)
 
