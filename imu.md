@@ -15,7 +15,7 @@ sitemap:
 
 ## What is an IMU?
 
-
+<br>
 An IMU is the abbreviation for **Inertial Measurement Unit**. It generally comes packaged in two flavors: 6-DoF and 9-DoF, i.e., six degrees of freedom or nine degrees of freedom.
 
 The first component of an IMU is called the **Gyroscope** or **Gyro** and it measures the angular velocity across an axis. So, you would need 3 gyros to compute angles in 3D. The best part about a gyro is that it is not affected by external forces and acceleration. Gyros work very well under dynamic conditions when rotational velocities are high, however they drift significantly with regard to time. Hence, the simplest filtering operation perfromed on gyro data is a high pass filter to remove low frequency drift. 
@@ -32,7 +32,7 @@ A 9-DoF IMU also includes a 3-axis magnetometer which measures Earth's magnetic 
 
 ## Complementary Filter for Attitude Estimation
 
-
+<br>
 The simplest  way to estimate angles/attitude/orientation of the IMU in world is by fusing data from gyros and acc using a **Complementary Filter**. 
 
 Like we mentioned before, we high pass the gyro data and low pass the acc data. 
@@ -46,7 +46,7 @@ $$\mathbf{\hat{a}}_{t+1} = (1-\alpha)\mathbf{a}_{t+1} + \alpha \mathbf{\hat{a}}_
 
 The high pass filtered gyro data is given by
 
-$$\mathbf{\hat{a}}_{t+1} = (1-\alpha)\mathbf{\hat{a}}_{t} + (1-\alpha)(\mathbf{a}_{t+1} - \mathbf{a}_{t})$$
+$$\mathbf{\hat{\omega}}_{t+1} = (1-\alpha)\mathbf{\hat{\omega}}_{t} + (1-\alpha)(\mathbf{\omega}_{t+1} - \mathbf{\omega}_{t})$$
 
 Here the $\hat{x}$ denotes the filtered version of $x$ and $t$ denotes time sample and $\alpha$ controls the frequency boundary where to switch from trusting the acc to trusting the gyros. 
 
