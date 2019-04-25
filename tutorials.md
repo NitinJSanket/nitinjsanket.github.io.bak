@@ -5,6 +5,5 @@ title: Tutorials
 order: 3
 ---
 
-- A
-- B
-- C
+- Attitude Estimation
+	- [Madgwick Filter](attitudeest/madgwick)
