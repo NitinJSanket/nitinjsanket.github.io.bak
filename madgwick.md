@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Madgwick Filter"
-permalink: attitudeest/madgwick
+permalink: tutorials/attitudeest/madgwick
 sitemap: 
   exclude: 'yes' 
 ---
