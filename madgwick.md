@@ -7,4 +7,4 @@ sitemap:
 ---
 
 
-AAAAA $$\mathcal{A}$$
+- mathematical model
