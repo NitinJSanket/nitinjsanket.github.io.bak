@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Test
+title: "Test"
 permalink: test.html
 sitemap: 
   exclude: 'yes' 
