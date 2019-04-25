@@ -8,10 +8,10 @@
         {% assign sorted_pages = site.pages | sort:"order" %}
         {% for page in sorted_pages %}
           {% if page.title %}
-            {% unless page.title == "404: Page not found" %}
-              {% unless page.title == "Test" %}
+            {% unless page.sitemap.exclude == 'yes' %}
+                <!-- {% unless page.title == "404: Page not found" %} -->
                 <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-              {% endunless %}
+               <!-- {% endunless %} -->
             {% endunless %}
           {% endif %}
         {% endfor %}
