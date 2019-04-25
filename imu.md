@@ -35,12 +35,12 @@ Let $$\mathbf{\omega} = [\omega_x, \omega_y, \omega_z]^T$$ and $$\mathbf{a} = [a
 
 The low pass filtered acc data is given by
 
-$$\mathbf{\hat{a}}_{t+1} = (1-\alpha)\mathbf{a}_{t+1} + \alpha \mathbf{\hat{a}_{t}$$
+$$\mathbf{\hat{a}}_{t+1} = (1-\alpha)\mathbf{a}_{t+1} + \alpha \mathbf{\hat{a}}_{t}$$
 
 
 The high pass filtered gyro data is given by
 
-$$\mathbf{\hat{\omega}}_{t+1} = (1-\alpha)\mathbf{\omega}_{t+1} + \alpha \mathbf{\hat{\omega}_{t}$$
+$$\mathbf{\hat{\omega}}_{t+1} = (1-\alpha)\mathbf{\omega}_{t+1} + \alpha \mathbf{\hat{\omega}}_{t}$$
 
 
 
