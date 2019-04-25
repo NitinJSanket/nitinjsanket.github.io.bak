@@ -40,7 +40,14 @@ $$\mathbf{\hat{a}}_{t+1} = (1-\alpha)\mathbf{a}_{t+1} + \alpha \mathbf{\hat{a}}_
 
 The high pass filtered gyro data is given by
 
-$$\mathbf{\hat{\omega}}_{t+1} = (1-\alpha)\mathbf{\omega}_{t+1} + \alpha \mathbf{\hat{\omega}}_{t}$$
+$$\mathbf{\hat{a}}_{t+1} = (1-\alpha)\mathbf{\hat{a}}_{t} + (1-\alpha)(\mathbf{a}_{t+1} - \mathbf{a}_{t})$$
 
+Here the $\hat{x}$ denotes the filtered version of $x$ and $t$ denotes time sample and $\alpha$ controls the frequency boundary where to switch from trusting the acc to trusting the gyros. 
 
+$$\alpha$$ can be chosen as $$\alpha = \frac{\tau}{\tau + dt}$$ where $$\tau$$ is the desired time constant - how fast you want the readings to respond and $$dt = f_s^{-1}$$ is the inverse of sampling frequency $$f_s$$. Generally $$\alpha > 0.5$$ is used. 
+
+The final equation for fusing gyro and acc data into a complementary filter is given below
+
+$$ Ang_{t+1} = (1 - \alpha)(Ang_t + \mathbf{\omega}_{t+1}) + \alpha\mathbf{a}_{t+1}$$
+ 
 
