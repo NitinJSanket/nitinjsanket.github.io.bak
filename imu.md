@@ -6,14 +6,16 @@ sitemap:
   exclude: 'yes' 
 ---
 
-Table of Contents:
+## Table of Contents:
 - [What is an IMU?](#whatisanimu)
 - [Complementary Filter](#cf)
 
 
 <a name='whatisanimu'></a>
 
-# What is an IMU?
+## What is an IMU?
+
+
 An IMU is the abbreviation for **Inertial Measurement Unit**. It generally comes packaged in two flavors: 6-DoF and 9-DoF, i.e., six degrees of freedom or nine degrees of freedom.
 
 The first component of an IMU is called the **Gyroscope** or **Gyro** and it measures the angular velocity across an axis. So, you would need 3 gyros to compute angles in 3D. The best part about a gyro is that it is not affected by external forces and acceleration. Gyros work very well under dynamic conditions when rotational velocities are high, however they drift significantly with regard to time. Hence, the simplest filtering operation perfromed on gyro data is a high pass filter to remove low frequency drift. 
@@ -28,7 +30,8 @@ A 9-DoF IMU also includes a 3-axis magnetometer which measures Earth's magnetic 
 
 <a name='cf'></a>
 
-# Complementary Filter for Attitude Estimation
+## Complementary Filter for Attitude Estimation
+
 
 The simplest  way to estimate angles/attitude/orientation of the IMU in world is by fusing data from gyros and acc using a **Complementary Filter**. 
 
@@ -53,4 +56,4 @@ The final equation for fusing gyro and acc data into a complementary filter is g
 
 $$ Ang_{t+1} = (1 - \alpha)(Ang_t + \mathbf{\omega}_{t+1}) + \alpha\mathbf{a}_{t+1}$$
  
-
+Here the gyro data is integrated to obtain angles.
