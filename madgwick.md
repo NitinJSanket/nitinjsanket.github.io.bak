@@ -60,3 +60,21 @@ Following are the steps for attitude estimation using a Madgwick filter.
 - **Step 2 (a):** Compute orientation increment from acc measurements (gradient step). 
 
 $$ \nabla f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_t \right) =  J^T\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}} \right) f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_t \right) $$ 
+
+$$ f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_t \right) = \begin{bmatrix}  
+2\left( q_2q_4 - q_1q_3\right) - a_x\\
+2\left( q_1q_2 + q_3q_4\right) - a_y\\
+2\left( \frac{1}{2} - q_2^2 - q_3^2\right) - a_z\\
+\end{bmatrix} $$
+
+$$ J\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}} \right) = \begin{bmatrix}  
+-2q_3 & 2q_4 & -2q_1 & 2q_2 \\
+2q_2 & 2q_1 & 2q_4 & 2q_3 \\
+0 & -4q_2 & -4q_3 & 0\\
+\end{bmatrix} $$
+
+- **Step 2 (b):** Compute orientation increment from gyro measurements (numerical integration).
+
+$$
+{}^{I}_{W}\mathbf{\dot{q}}_{est,t+1} = \frac{1}{2} {}^{I}_{W}\mathbf{\hat{q}}_{est,t}\otimes {}^{I}\omega_{t+1}
+$$
