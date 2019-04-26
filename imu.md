@@ -61,3 +61,4 @@ Here the gyro data is integrated to obtain angles.
 
 - Why you cant just integrate gyros?
 - Why you cant rely just on acc?
+- References
