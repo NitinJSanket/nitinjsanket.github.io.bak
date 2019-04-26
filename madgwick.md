@@ -59,4 +59,4 @@ Following are the steps for attitude estimation using a Madgwick filter.
 - **Step 1:** Obtain gyro and acc measurements from the sensor. Let $${}^I\omega_t$$ and $${}^I\mathbf{a}_t$$ denote the gyro and acc measurements respectively. Also, $${}^I\mathbf{\hat{a}}_t$$ denotes the normalized acc measurements. 
 - **Step 2 (a):** Compute orientation increment from acc measurements (gradient step). 
 
-$$ \nabla f\left( {}^{I}_{W}\mathbf{\hat{q}}, {}^\^W\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}} \right) =  $$ 
+$$ \nabla f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_t \right) =  J^T\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}} \right) f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_t \right) $$ 
