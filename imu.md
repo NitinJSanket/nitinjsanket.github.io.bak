@@ -58,3 +58,6 @@ The final equation for fusing gyro and acc data into a complementary filter is g
 $$ Ang_{t+1} = (1 - \alpha)(Ang_t + \mathbf{\omega}_{t+1}dt) + \alpha\mathbf{a}_{t+1}$$
  
 Here the gyro data is integrated to obtain angles.
+
+- Why you cant just integrate gyros?
+- Why you cant rely just on acc?
