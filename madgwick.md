@@ -77,7 +77,7 @@ Following are the steps for attitude estimation using a Madgwick filter (Refer t
 
 - **Step 1: Obtain sensor measurements**<br> Obtain gyro and acc measurements from the sensor. Let $${}^I\omega_t$$ and $${}^I\mathbf{a}_t$$ denote the gyro and acc measurements respectively. Also, $${}^I\mathbf{\hat{a}}_t$$ denotes the normalized acc measurements. 
 
-- **Step 2 (a): Orientation from Acc**<br> Compute orientation increment from acc measurements (gradient step). <br>
+- **Step 2 (a): Orientation increment from Acc**<br> Compute orientation increment from acc measurements (gradient step). <br>
 <center> $$ \nabla f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_{t+1} \right) =  J^T\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}} \right) f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_{t+1} \right) $$ <br>
 $$ f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_{t+1} \right) = \begin{bmatrix}  
 2\left( q_2q_4 - q_1q_3\right) - a_x\\
@@ -97,7 +97,7 @@ $$
 
 Look at green parts in Fig. 1.
 
-- **Step 2 (b): Orientation from Gyro** <br> Compute orientation increment from gyro measurements (numerical integration).<br>
+- **Step 2 (b): Orientation increment from Gyro** <br> Compute orientation increment from gyro measurements (numerical integration).<br>
 <center> $$
 {}^{I}_{W}\mathbf{\dot{q}}_{\omega,t+1} = \frac{1}{2} {}^{I}_{W}\mathbf{\hat{q}}_{est,t}\otimes \begin{bmatrix} 0, {}^{I}\omega_{t+1} \end{bmatrix}^T $$ <br>
 </center> 
@@ -115,3 +115,5 @@ $$  </center> <br>
 Here, \\(\Delta t\\) is the time elapsed between two samples at \\(t\\) and \\(t+1\\). Look at red parts in Fig. 1.
 
 **Repeat steps 1 to 3 for every time instant.** 
+
+- Tunable params?
