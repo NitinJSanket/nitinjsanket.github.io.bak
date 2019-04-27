@@ -7,5 +7,5 @@ order: 3
 
 - Attitude Estimation
 	- [What is an IMU? and Complementary Filter](attitudeest/imu)
-	- [Mahony Filter](tutorials/attitudeest/mahony)
+	- [Mahony Filter](attitudeest/mahony)
 	- [Madgwick Filter](attitudeest/madgwick)
