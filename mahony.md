@@ -95,4 +95,6 @@ Here, \\(\otimes\\) denotes quaternion multiplication.
 {}^{I}_{W}\mathbf{q}_{est,t+1} = {}^{I}_{W}\mathbf{\hat{q}}_{est,t} + {}^{I}_{W}\mathbf{\dot{q}}_{\omega,t+1} \Delta t  $$ <br>
 </center> 
 
+**Repeat steps 1 to 5 for every time instant.** <br>
+
 In a Mahony filter, the only tunable parameters are the PI compensator gians $$\mathbf{K}_p$$ and $$\mathbf{K}_i$$. Also, the user needs to specify the initial estimates of the attitude, biases and sampling time. The initial attitude can be assumed to be zero if th device is at rest or it has to be obtained by external sources such as a motion capture system or a camera. The bias is computed by taking an average of samples with the IMU at rest and computing the mean value. Note that this bias changes over time and the filter will start to drift over time. The sampling time is the inverse of the operating frequency of the IMU and is specified generally at the driver level.
