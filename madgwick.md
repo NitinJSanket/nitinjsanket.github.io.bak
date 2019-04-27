@@ -74,7 +74,7 @@ Following are the steps for attitude estimation using a Madgwick filter (Refer t
   </div>
   <div style="clear:both;"></div>
 </div>
-https://nitinjsanket.github.io/tutorials/attitudeest/assets/img/tutorials/MadgwickFilterOverview.PNG
+
 - **Step 1: Obtain sensor measurements**<br> Obtain gyro and acc measurements from the sensor. Let $${}^I\omega_t$$ and $${}^I\mathbf{a}_t$$ denote the gyro and acc measurements respectively. Also, $${}^I\mathbf{\hat{a}}_t$$ denotes the normalized acc measurements. 
 
 - **Step 2 (a): Orientation from Acc**<br> Compute orientation increment from acc measurements (gradient step). <br>
