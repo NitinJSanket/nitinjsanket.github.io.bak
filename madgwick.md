@@ -56,6 +56,5 @@ The Madgwick filter formulates the attitude estimation problem in quaternion spa
 As in [Complementary Filter](tutorials/attitudeest/imu), the attitude is estimated from the gyro by numerical integration. The attitude estimation from the acc is done by using a gradient descent algorithm to solve the following minimzation problem. 
 
 $$
- \min_{ {}^{I}_{W}\mathbf{\hat{q}} \in \mathbb{R} } f\left({}^{I}_{W}\mathbf{\hat{q}}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}} \right)  
+ \min_{ {}^{I}_{W}\mathbf{\hat{q}} \in \mathbb{R}^{4 \times 1}} f\left({}^{I}_{W}\mathbf{\hat{q}}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}} \right)  
 $$ 
-
