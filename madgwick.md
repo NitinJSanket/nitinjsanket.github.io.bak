@@ -107,7 +107,7 @@ Look at blue parts in Fig. 1.
 - **Step 3: Fuse Measurements** <br> Fuse the measurments from both the acc and gyro to obtain the estimated attitude $$ {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}$$. <br>
 <center> 
 $$
-{}^{I}_{W}\mathbf{\dot{q}}_{est, t+1} = {}^{I}_{W}\mathbf{\dot{q}}_{\omega, t} + {}^{I}_{W}\mathbf{q}_{\nabla, t+1} 
+{}^{I}_{W}\mathbf{\dot{q}}_{est, t+1} = {}^{I}_{W}\mathbf{\dot{q}}_{\omega, t+1} + {}^{I}_{W}\mathbf{q}_{\nabla, t+1} 
 $$ <br>
 $$ {}^{I}_{W}\mathbf{q}_{est, t+1} = {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1} + {}^{I}_{W}\mathbf{\dot{q}}_{est, t+1} \Delta t 
 $$  </center> <br>
