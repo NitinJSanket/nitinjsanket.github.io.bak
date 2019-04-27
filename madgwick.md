@@ -91,8 +91,8 @@ $$
 <center> $$
 {}^{I}_{W}\mathbf{\dot{q}}_{est,t+1} = \frac{1}{2} {}^{I}_{W}\mathbf{\hat{q}}_{est,t}\otimes \begin{bmatrix} 0, {}^{I}\omega_{t+1} \end{bmatrix}^T $$ <br>
 $$
-{}^{I}_{W}\mathbf{q}_{est,t+1} = {}^{I}_{W}\mathbf{q}_{est,t} + {}^{I}_{W}\mathbf{\dot{q}}_{est,t+1}\Delta t $$</center> <br>
-Here, $$\Delta t$$ is the time elapsed between two samples at $$t$$ and $$t+1$$. 
+{}^{I}_{W}\mathbf{q}_{est,t+1} = {}^{I}_{W}\mathbf{q}_{est,t} + {}^{I}_{W}\mathbf{\dot{q}}_{est,t+1}\Delta t $$ <br>
+Here, $$\Delta t$$ is the time elapsed between two samples at $$t$$ and $$t+1$$. </center>
 
 - **Step 3: Fuse Measurements** <br> Fuse the measurments from both the acc and gyro to obtain the estimated attitude $$ {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}$$. <br>
 <center> $$ {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1} = \gamma_{t+1} {}^{I}_{W}\mathbf{\hat{q}}_{\nabla, t+1} + \left( 1 - \gamma_{t+1} \right) {}^{I}_{W}\mathbf{q}_{\omega, t+1}
