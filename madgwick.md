@@ -54,14 +54,25 @@ The Madgwick filter is a glorified [Complementary Filter](tutorials/attitudeest/
 
 The Madgwick filter formulates the attitude estimation problem in quaternion space. The general idea of the Madgwick filter is to estimate $${}^{I}_{W}\mathbf{q}_{t+1}$$ by fusing/combining attitude estimates by integrating gyro measurements $${}^{I}_{W}\mathbf{q}_{\omega}$$ and direction obtained by the accelerometer measurements. In essence, the gyro estimates of attitude are used as accurate depictions in a small amount of time and faster movements and the acc estimates of attitude are used as accurate directions to compensate for long term gyro drift by integration. 
 
-As in [Complementary Filter](tutorials/attitudeest/imu), the attitude is estimated from the gyro by numerical integration.  
+As in [Complementary Filter](tutorials/attitudeest/imu), the attitude is estimated from the gyro by numerical integration. The attitude estimation from the acc is done by using a gradient descent algorithm to solve the following minimzation problem. 
+
+$$
+\min_{{}^{I}_{W}\mathbf{\hat{q}} \in \mathbb{R}^{4\times 1} f\left({}^{I}_{W}\mathbf{\hat{q}}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}  \right) 
+$$ 
+
+$$
+f\left({}^{I}_{W}\mathbf{\hat{q}}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}  \right)  = {}^{I}_{W}\mathbf{\hat{q^*}} \otimes {}^{W}\mathbf{\hat{g}} \otimes {}^{I}_{W}\mathbf{\hat{q}} - {}^{I}\mathbf{\hat{a}}
+$$
+
+Here, $$\mathbf{q}^*$$ denotes the conjugate of $$\mathbf{q}$$ and $$\otimes$$ indicates quaternion multiplication. $${}^{W}\mathbf{\hat{g}}$$ denotes the normalized gravity vector and is given by $${}^{W}\mathbf{\hat{g}} = \begin{bmatrix} 0 & 0 & 0 & 1\end{bmatrix}^T$$ and $${}^{I}\mathbf{\hat{a}}$$ denotes the normalized acc measurements. 
+
 
 Following are the steps for attitude estimation using a Madgwick filter.
 
 - **Step 1: Obtain sensor measurements**<br> Obtain gyro and acc measurements from the sensor. Let $${}^I\omega_t$$ and $${}^I\mathbf{a}_t$$ denote the gyro and acc measurements respectively. Also, $${}^I\mathbf{\hat{a}}_t$$ denotes the normalized acc measurements. 
 
 - **Step 2 (a): Orientation from Acc**<br> Compute orientation increment from acc measurements (gradient step). <br>
-$$ \nabla f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_{t+1} \right) =  J^T\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}} \right) f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_{t+1} \right) $$ <br>
+<center> $$ \nabla f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_{t+1} \right) =  J^T\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}} \right) f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_{t+1} \right) $$ <br>
 $$ f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_{t+1} \right) = \begin{bmatrix}  
 2\left( q_2q_4 - q_1q_3\right) - a_x\\
 2\left( q_1q_2 + q_3q_4\right) - a_y\\
@@ -71,7 +82,7 @@ $$ J\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}, {}^{W}\mathbf{\hat{g}} \right)
 -2q_3 & 2q_4 & -2q_1 & 2q_2 \\
 2q_2 & 2q_1 & 2q_4 & 2q_3 \\
 0 & -4q_2 & -4q_3 & 0\\
-\end{bmatrix} $$ <br>
+\end{bmatrix} $$ <br> </center>	
 Update Term (Attitude component from acc measurements) is given by 
 
 $$
@@ -81,8 +92,7 @@ $$
 - **Step 2 (b): Orientation from Gyro** <br> Compute orientation increment from gyro measurements (numerical integration).
 
 $$
-{}^{I}_{W}\mathbf{\dot{q}}_{est,t+1} = \frac{1}{2} {}^{I}_{W}\mathbf{\hat{q}}_{est,t}\otimes {}^{I}\omega_{t+1}
-$$
+{}^{I}_{W}\mathbf{\dot{q}}_{est,t+1} = \frac{1}{2} {}^{I}_{W}\mathbf{\hat{q}}_{est,t}\otimes \begin{bmatrix} 0, {}^{I}\omega_{t+1} \end{bmatrix}^T $$
 
 - **Step 3: Fuse Measurements** <br> Fuse the measurments from both the acc and gyro to obtain the estimated attitude $$ {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}$$. <br>
 <center> $$ {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1} = \gamma_{t+1} {}^{I}_{W}\mathbf{\hat{q}}_{\nabla, t+1} + \left( 1 - \gamma_{t+1} \right) {}^{I}_{W}\mathbf{q}_{\omega, t+1}
@@ -90,3 +100,4 @@ $$ </center> <br>
 Here $$ \gamma_{t+1} \in [0, 1]$$. 
 
 **Repeat steps 1 to 3 for every time instant.** 
+
