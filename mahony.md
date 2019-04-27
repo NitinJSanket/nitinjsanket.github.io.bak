@@ -80,13 +80,15 @@ Here, \\(\Delta t\\) is the time elapsed between two samples at \\(t\\) and \\(t
 
 - **Step 3: Update Gyro Measurements using PI Compensation (Fusion)** <br> Compute updated gyro measurements after the application of the PI compensation term (sensor fusion using feedback).<br>
 <center> 
-$$ {}^{I}_{W}\mathbf{\dot{q}}_{\omega,t+1} = {}^{I}_{W}\mathbf{\dot{q}}_{\omega,t+1} + \mathbf{K}_p\mathbf{e}_{t+1} + \mathbf{K}_i\mathbf{e}_{i, t+1} $$ <br>
+$$ {}^{I}_{W}\mathbf{\omega}_{\omega,t+1} = {}^{I}_{W}\mathbf{\omega}_{\omega,t+1} + \mathbf{K}_p\mathbf{e}_{t+1} + \mathbf{K}_i\mathbf{e}_{i, t+1} $$ <br>
 </center> 
 
 - **Step 4: Orientation increment from Gyro** <br> Compute orientation increment from gyro measurements.<br>
 <center> $$
 {}^{I}_{W}\mathbf{\dot{q}}_{\omega,t+1} = \frac{1}{2} {}^{I}_{W}\mathbf{\hat{q}}_{est,t}\otimes \begin{bmatrix} 0, {}^{I}\omega_{t+1} \end{bmatrix}^T $$ <br>
 </center> 
+Here, \\(\otimes\\) denotes quaternion multiplication. 
+
 
 - **Step 5: Numerical Integration** <br> Compute orientation by integrating orientation increment.<br>
 <center> $$
