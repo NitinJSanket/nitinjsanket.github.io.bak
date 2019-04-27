@@ -95,10 +95,13 @@ $$
 {}^{I}_{W}\mathbf{q}_{\nabla, t+1} = - \beta\frac{\nabla f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_{t+1} \right)}{\vert \vert \vert f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_{t+1} \right) \vert } 
 $$
 
+Look at green parts in Fig. 1.
+
 - **Step 2 (b): Orientation from Gyro** <br> Compute orientation increment from gyro measurements (numerical integration).<br>
 <center> $$
 {}^{I}_{W}\mathbf{\dot{q}}_{\omega,t+1} = \frac{1}{2} {}^{I}_{W}\mathbf{\hat{q}}_{est,t}\otimes \begin{bmatrix} 0, {}^{I}\omega_{t+1} \end{bmatrix}^T $$ <br>
 </center> <br>
+Look at blue parts in Fig. 1.
 
 
 - **Step 3: Fuse Measurements** <br> Fuse the measurments from both the acc and gyro to obtain the estimated attitude $$ {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}$$. <br>
@@ -108,16 +111,6 @@ $$
 $$ <br>
 $$ {}^{I}_{W}\mathbf{q}_{est, t+1} = {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1} + {}^{I}_{W}\mathbf{\dot{q}}_{est, t+1} \Delta t 
 $$  </center> <br>
-Here, \\(\Delta t\\) is the time elapsed between two samples at \\(t\\) and \\(t+1\\). 
+Here, \\(\Delta t\\) is the time elapsed between two samples at \\(t\\) and \\(t+1\\). Look at red parts in Fig. 1.
 
 **Repeat steps 1 to 3 for every time instant.** 
-
-<!-- $$ 
-{}^{I}_{W}\mathbf{q}_{\est,t+1} = {}^{I}_{W}\mathbf{q}_{est,t} + {}^{I}_{W}\mathbf{\dot{q}}_{est,t+1}\Delta t $$ -->
-
-<!-- $$ {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1} = \gamma_{t+1} {}^{I}_{W}\mathbf{\hat{q}}_{\nabla, t+1} + \left( 1 - \gamma_{t+1} \right) {}^{I}_{W}\mathbf{q}_{\omega, t+1}
-$$ 
-Here $$ \gamma_{t+1} \in [0, 1]$$. 
--->
-
-MadgwickFilterOverview
