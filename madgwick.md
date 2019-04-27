@@ -57,16 +57,14 @@ The Madgwick filter formulates the attitude estimation problem in quaternion spa
 Following are the steps for attitude estimation using a Madgwick filter.
 
 - **Step 1: Obtain sensor measurements**<br> Obtain gyro and acc measurements from the sensor. Let $${}^I\omega_t$$ and $${}^I\mathbf{a}_t$$ denote the gyro and acc measurements respectively. Also, $${}^I\mathbf{\hat{a}}_t$$ denotes the normalized acc measurements. 
-- **Step 2 (a): Orientation from Acc**<br> Compute orientation increment from acc measurements (gradient step). 
 
-$$ \nabla f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_{t+1} \right) =  J^T\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}} \right) f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_{t+1} \right) $$ 
-
+- **Step 2 (a): Orientation from Acc**<br> Compute orientation increment from acc measurements (gradient step). <br>
+$$ \nabla f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_{t+1} \right) =  J^T\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}} \right) f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_{t+1} \right) $$ <br>
 $$ f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_{t+1} \right) = \begin{bmatrix}  
 2\left( q_2q_4 - q_1q_3\right) - a_x\\
 2\left( q_1q_2 + q_3q_4\right) - a_y\\
 2\left( \frac{1}{2} - q_2^2 - q_3^2\right) - a_z\\
-\end{bmatrix} $$
-
+\end{bmatrix} $$ <br>
 $$ J\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}, {}^{W}\mathbf{\hat{g}} \right) = \begin{bmatrix}  
 -2q_3 & 2q_4 & -2q_1 & 2q_2 \\
 2q_2 & 2q_1 & 2q_4 & 2q_3 \\
@@ -84,10 +82,8 @@ $$
 {}^{I}_{W}\mathbf{\dot{q}}_{est,t+1} = \frac{1}{2} {}^{I}_{W}\mathbf{\hat{q}}_{est,t}\otimes {}^{I}\omega_{t+1}
 $$
 
-- **Step 3: Fuse Measurements** <br> Fuse the measurments from both the acc and gyro to obtain the estimated attitude $$ {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}$$.
-
-$$
-{}^{I}_{W}\mathbf{\hat{q}}_{est, t+1} = \gamma_{t+1} {}^{I}_{W}\mathbf{\hat{q}}_{\nabla, t+1} + \left( 1 - \gamma_{t+1} \right) {}^{I}_{W}\mathbf{q}_{\omega, t+1}
+- **Step 3: Fuse Measurements** <br> Fuse the measurments from both the acc and gyro to obtain the estimated attitude $$ {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}$$. <br>
+$$ {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1} = \gamma_{t+1} {}^{I}_{W}\mathbf{\hat{q}}_{\nabla, t+1} + \left( 1 - \gamma_{t+1} \right) {}^{I}_{W}\mathbf{q}_{\omega, t+1}
 $$ <br>
 Here $$ \gamma_{t+1} \in [0, 1]$$. <br>
 Repeat steps 1 to 3 for every time instant. 
