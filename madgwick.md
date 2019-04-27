@@ -65,7 +65,16 @@ $$
 
 Here, $$\mathbf{q}^*$$ denotes the conjugate of $$\mathbf{q}$$ and $$\otimes$$ indicates quaternion multiplication. $${}^{W}\mathbf{\hat{g}}$$ denotes the normalized gravity vector and is given by $${}^{W}\mathbf{\hat{g}} = \begin{bmatrix} 0 & 0 & 0 & 1\end{bmatrix}^T$$ and $${}^{I}\mathbf{\hat{a}}$$ denotes the normalized acc measurements. From now on $$\mathbf{\hat{x}}$$ denotes normalized version of $$\mathbf{x}$$.
 
-Following are the steps for attitude estimation using a Madgwick filter.
+Following are the steps for attitude estimation using a Madgwick filter (Refer to Fig. 1 shown below for an overview of the algorithm).
+
+<div class="fig fighighlight">
+  <img src="assets/img/tutorials/MadgwickFilterOverview.PNG" width="100%">
+  <div class="figcaption">
+  	Fig 1: Overview of Madgwick Filter.
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
 
 - **Step 1: Obtain sensor measurements**<br> Obtain gyro and acc measurements from the sensor. Let $${}^I\omega_t$$ and $${}^I\mathbf{a}_t$$ denote the gyro and acc measurements respectively. Also, $${}^I\mathbf{\hat{a}}_t$$ denotes the normalized acc measurements. 
 
@@ -111,3 +120,5 @@ Here, \\(\Delta t\\) is the time elapsed between two samples at \\(t\\) and \\(t
 $$ 
 Here $$ \gamma_{t+1} \in [0, 1]$$. 
 -->
+
+MadgwickFilterOverview
