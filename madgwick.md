@@ -91,4 +91,9 @@ $$
 {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1} = \gamma_{t+1} {}^{I}_{W}\mathbf{\hat{q}}_{\nabla, t+1} + \left( 1 - \gamma_{t+1} \right) {}^{I}_{W}\mathbf{q}_{\omega, t+1}
 $$ 
 
-Here $$ \gamma_{t+1} \in [0, 1]$$.
+<p>
+Here $$ \gamma_{t+1} \in [0, 1]$$. <br>
+<br>
+
+Repeat steps 1 to 3 for every time instant. 
+</p>
