@@ -63,7 +63,7 @@ $$
 f\left({}^{I}_{W}\mathbf{\hat{q}}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}  \right)  = {}^{I}_{W}\mathbf{\hat{q^*}} \otimes {}^{W}\mathbf{\hat{g}} \otimes {}^{I}_{W}\mathbf{\hat{q}} - {}^{I}\mathbf{\hat{a}}
 $$
 
-Here, $$\mathbf{q}^*$$ denotes the conjugate of $$\mathbf{q}$$ and $$\otimes$$ indicates quaternion multiplication. $${}^{W}\mathbf{\hat{g}}$$ denotes the normalized gravity vector and is given by $${}^{W}\mathbf{\hat{g}} = \begin{bmatrix} 0 & 0 & 0 & 1\end{bmatrix}^T$$ and $${}^{I}\mathbf{\hat{a}}$$ denotes the normalized acc measurements. 
+Here, $$\mathbf{q}^*$$ denotes the conjugate of $$\mathbf{q}$$ and $$\otimes$$ indicates quaternion multiplication. $${}^{W}\mathbf{\hat{g}}$$ denotes the normalized gravity vector and is given by $${}^{W}\mathbf{\hat{g}} = \begin{bmatrix} 0 & 0 & 0 & 1\end{bmatrix}^T$$ and $${}^{I}\mathbf{\hat{a}}$$ denotes the normalized acc measurements. From now on $$\mathbf{\hat{x}}$$ denotes normalized version of $$\mathbf{x}$$.
 
 Following are the steps for attitude estimation using a Madgwick filter.
 
@@ -91,16 +91,16 @@ $$
 <center> $$
 {}^{I}_{W}\mathbf{\dot{q}}_{\omega,t+1} = \frac{1}{2} {}^{I}_{W}\mathbf{\hat{q}}_{est,t}\otimes \begin{bmatrix} 0, {}^{I}\omega_{t+1} \end{bmatrix}^T $$ <br>
 </center> <br>
-Here, \\(\Delta t\\) is the time elapsed between two samples at \\(t\\) and \\(t+1\\). 
+
 
 - **Step 3: Fuse Measurements** <br> Fuse the measurments from both the acc and gyro to obtain the estimated attitude $$ {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}$$. <br>
 <center> 
 $$
 {}^{I}_{W}\mathbf{\dot{q}}_{est, t+1} = {}^{I}_{W}\mathbf{\dot{q}}_{\omega, t} + {}^{I}_{W}\mathbf{q}_{\nabla, t+1} 
 $$ <br>
-$$ {}^{I}_{W}\mathbf{q}_{est, t+1} = {}^{I}_{W}\mathbf{\hat{q}}_{est, t} + {}^{I}_{W}\mathbf{\dot{q}}_{est, t+1} \Delta t 
+$$ {}^{I}_{W}\mathbf{q}_{est, t+1} = {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1} + {}^{I}_{W}\mathbf{\dot{q}}_{est, t+1} \Delta t 
 $$  </center> <br>
-
+Here, \\(\Delta t\\) is the time elapsed between two samples at \\(t\\) and \\(t+1\\). 
 
 **Repeat steps 1 to 3 for every time instant.** 
 
