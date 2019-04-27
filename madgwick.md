@@ -68,14 +68,13 @@ Here, $$\mathbf{q}^*$$ denotes the conjugate of $$\mathbf{q}$$ and $$\otimes$$ i
 Following are the steps for attitude estimation using a Madgwick filter (Refer to Fig. 1 shown below for an overview of the algorithm).
 
 <div class="fig fighighlight">
-  <img src="assets/img/tutorials/MadgwickFilterOverview.PNG" width="100%">
+  <img src="https://nitinjsanket.github.io/assets/img/tutorials/MadgwickFilterOverview.png" width="100%">
   <div class="figcaption">
   	Fig 1: Overview of Madgwick Filter.
   </div>
   <div style="clear:both;"></div>
 </div>
-
-
+https://nitinjsanket.github.io/tutorials/attitudeest/assets/img/tutorials/MadgwickFilterOverview.PNG
 - **Step 1: Obtain sensor measurements**<br> Obtain gyro and acc measurements from the sensor. Let $${}^I\omega_t$$ and $${}^I\mathbf{a}_t$$ denote the gyro and acc measurements respectively. Also, $${}^I\mathbf{\hat{a}}_t$$ denotes the normalized acc measurements. 
 
 - **Step 2 (a): Orientation from Acc**<br> Compute orientation increment from acc measurements (gradient step). <br>
