@@ -80,7 +80,7 @@ Here, \\(\Delta t\\) is the time elapsed between two samples at \\(t\\) and \\(t
 
 - **Step 3: Update Gyro Measurements using PI Compensation (Fusion)** <br> Compute updated gyro measurements after the application of the PI compensation term (sensor fusion using feedback).<br>
 <center> 
-$$ {}^{I}_{W}\mathbf{\omega}_{\omega,t+1} = {}^{I}_{W}\mathbf{\omega}_{\omega,t+1} + \mathbf{K}_p\mathbf{e}_{t+1} + \mathbf{K}_i\mathbf{e}_{i, t+1} $$ <br>
+$$ {}^{I}\mathbf{\omega}_{t+1} = {}^{I}\mathbf{\omega}_{t+1} + \mathbf{K}_p\mathbf{e}_{t+1} + \mathbf{K}_i\mathbf{e}_{i, t+1} $$ <br>
 </center> 
 
 - **Step 4: Orientation increment from Gyro** <br> Compute orientation increment from gyro measurements.<br>
@@ -94,3 +94,5 @@ Here, \\(\otimes\\) denotes quaternion multiplication.
 <center> $$
 {}^{I}_{W}\mathbf{q}_{est,t+1} = {}^{I}_{W}\mathbf{\hat{q}}_{est,t} + {}^{I}_{W}\mathbf{\dot{q}}_{\omega,t+1} \Delta t  $$ <br>
 </center> 
+
+In a Mahony filter, the only tunable parameters are the PI compensator gians $$\mathbf{K}_p$$ and $$\mathbf{K}_i$$. Also, the user needs to specify the initial estimates of the attitude, biases and sampling time. The initial attitude can be assumed to be zero if th device is at rest or it has to be obtained by external sources such as a motion capture system or a camera. The bias is computed by taking an average of samples with the IMU at rest and computing the mean value. Note that this bias changes over time and the filter will start to drift over time. The sampling time is the inverse of the operating frequency of the IMU and is specified generally at the driver level.
