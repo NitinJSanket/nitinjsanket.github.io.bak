@@ -46,13 +46,15 @@ Here the orientation of the sensor is either known from external sources such as
 ## Madgwick Filter
 
 <br>
-Before we start talking about the madgwick filter formulation, let us formally define coordinate axes we will use. Let the letters $$I, W, B$$ denote inertial, world and body frames respectively. Generally $$B$$ and $$I$$ are the same but they don't have to be. A pre-subscript denotes the source coordinate frame and a pre-superscript denotes the destination coordinate frame. For eg., $${}^{B}_{A}X$$ transforms $$X$$ from coordinate frame $$A$$ to $$B$$. 
+Before we start talking about the madgwick filter formulation, let us formally define coordinate axes we will use. Let the letters $$I, W, B$$ denote inertial, world and body frames respectively. Generally $$B$$ and $$I$$ are the same but they don't have to be. A pre-subscript denotes the source coordinate frame and a pre-superscript denotes the destination coordinate frame. For eg., $${}^{B}_{A}X$$ transforms $$X$$ from coordinate frame $$A$$ to $$B$$. If only a pre-superscript is present, it means that the quantity was measured and is represented in the same coordinate frame represented by the pre-superscript.
 
 The desired output is to estimate the attitude/angle/orientation of the IMU sensor in the world frame, i.e., estimating $${}^{W}_{I}\mathbf{q}$$. We use $$\mathbf{q}$$ to denote the orientation represented in the form of a **Quaternion**. If you don't know much about quaternions, I would highly recommend to read [this Wikipedia article](https://en.wikipedia.org/wiki/Quaternion) on quaternions.  
 
-The Madgwick filter is a glorified [Complementary Filter](tutorials/attitudeest/imu) with significant improvements to accuracy without significant markup in computation time. Even today, this remains to be one of the most popular filters used in racing quadrotors where time is money. 
+The Madgwick filter is a glorified [Complementary Filter](tutorials/attitudeest/imu) with significant improvements to accuracy without significant markup in computation time. Even today, it remains to be one of the most popular filters used in racing quadrotors where time is money. 
 
 The Madgwick filter formulates the attitude estimation problem in quaternion space. The general idea of the Madgwick filter is to estimate $${}^{I}_{W}\mathbf{q}_{t+1}$$ by fusing/combining attitude estimates by integrating gyro measurements $${}^{I}_{W}\mathbf{q}_{\omega}$$ and direction obtained by the accelerometer measurements. In essence, the gyro estimates of attitude are used as accurate depictions in a small amount of time and faster movements and the acc estimates of attitude are used as accurate directions to compensate for long term gyro drift by integration. 
+
+As in [Complementary Filter](tutorials/attitudeest/imu), the attitude is estimated from the gyro by numerical integration.  
 
 Following are the steps for attitude estimation using a Madgwick filter.
 
@@ -83,7 +85,8 @@ $$
 $$
 
 - **Step 3: Fuse Measurements** <br> Fuse the measurments from both the acc and gyro to obtain the estimated attitude $$ {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}$$. <br>
-$$ {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1} = \gamma_{t+1} {}^{I}_{W}\mathbf{\hat{q}}_{\nabla, t+1} + \left( 1 - \gamma_{t+1} \right) {}^{I}_{W}\mathbf{q}_{\omega, t+1}
-$$ <br>
-Here $$ \gamma_{t+1} \in [0, 1]$$. <br>
-Repeat steps 1 to 3 for every time instant. 
+<center> $$ {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1} = \gamma_{t+1} {}^{I}_{W}\mathbf{\hat{q}}_{\nabla, t+1} + \left( 1 - \gamma_{t+1} \right) {}^{I}_{W}\mathbf{q}_{\omega, t+1}
+$$ </center> <br>
+Here $$ \gamma_{t+1} \in [0, 1]$$. 
+
+**Repeat steps 1 to 3 for every time instant.** 
