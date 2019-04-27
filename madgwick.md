@@ -100,7 +100,8 @@ Look at green parts in Fig. 1.
 - **Step 2 (b): Orientation from Gyro** <br> Compute orientation increment from gyro measurements (numerical integration).<br>
 <center> $$
 {}^{I}_{W}\mathbf{\dot{q}}_{\omega,t+1} = \frac{1}{2} {}^{I}_{W}\mathbf{\hat{q}}_{est,t}\otimes \begin{bmatrix} 0, {}^{I}\omega_{t+1} \end{bmatrix}^T $$ <br>
-</center> <br>
+</center> 
+
 Look at blue parts in Fig. 1.
 
 
