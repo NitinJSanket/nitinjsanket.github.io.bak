@@ -66,7 +66,7 @@ f\left({}^{I}_{W}\mathbf{\hat{q}}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}
 $$
 
 Here, $$\mathbf{q}^*$$ denotes the conjugate of $$\mathbf{q}$$ and $$\otimes$$ indicates quaternion multiplication. $${}^{W}\mathbf{\hat{g}}$$ denotes the normalized gravity vector and is given by $${}^{W}\mathbf{\hat{g}} = \begin{bmatrix} 0 & 0 & 0 & 1\end{bmatrix}^T$$ and $${}^{I}\mathbf{\hat{a}}$$ denotes the normalized acc measurements. 
--->
+
 
 Following are the steps for attitude estimation using a Madgwick filter.
 
@@ -102,3 +102,4 @@ Here $$ \gamma_{t+1} \in [0, 1]$$.
 
 **Repeat steps 1 to 3 for every time instant.** 
 
+-->
