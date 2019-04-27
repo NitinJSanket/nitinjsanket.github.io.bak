@@ -65,4 +65,37 @@ $$
 
 Here, $$\mathbf{q}^*$$ denotes the conjugate of $$\mathbf{q}$$ and $$\otimes$$ indicates quaternion multiplication. $${}^{W}\mathbf{\hat{g}}$$ denotes the normalized gravity vector and is given by $${}^{W}\mathbf{\hat{g}} = \begin{bmatrix} 0 & 0 & 0 & 1\end{bmatrix}^T$$ and $${}^{I}\mathbf{\hat{a}}$$ denotes the normalized acc measurements. 
 
+Following are the steps for attitude estimation using a Madgwick filter.
+
+- **Step 1: Obtain sensor measurements**<br> Obtain gyro and acc measurements from the sensor. Let $${}^I\omega_t$$ and $${}^I\mathbf{a}_t$$ denote the gyro and acc measurements respectively. Also, $${}^I\mathbf{\hat{a}}_t$$ denotes the normalized acc measurements. 
+
+- **Step 2 (a): Orientation from Acc**<br> Compute orientation increment from acc measurements (gradient step). <br>
+<center> $$ \nabla f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_{t+1} \right) =  J^T\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}} \right) f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_{t+1} \right) $$ <br>
+$$ f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_{t+1} \right) = \begin{bmatrix}  
+2\left( q_2q_4 - q_1q_3\right) - a_x\\
+2\left( q_1q_2 + q_3q_4\right) - a_y\\
+2\left( \frac{1}{2} - q_2^2 - q_3^2\right) - a_z\\
+\end{bmatrix} $$ <br>
+$$ J\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}, {}^{W}\mathbf{\hat{g}} \right) = \begin{bmatrix}  
+-2q_3 & 2q_4 & -2q_1 & 2q_2 \\
+2q_2 & 2q_1 & 2q_4 & 2q_3 \\
+0 & -4q_2 & -4q_3 & 0\\
+\end{bmatrix} $$ <br> </center>	
+Update Term (Attitude component from acc measurements) is given by 
+
+$$
+{}^{I}_{W}\mathbf{q}_{\nabla, t+1} = - \beta\frac{\nabla f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_{t+1} \right)}{\vert \vert \vert f\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}, {}^{W}\mathbf{\hat{g}}, {}^{I}\mathbf{\hat{a}}_{t+1} \right) \vert } 
+$$
+
+- **Step 2 (b): Orientation from Gyro** <br> Compute orientation increment from gyro measurements (numerical integration).
+
+$$
+{}^{I}_{W}\mathbf{\dot{q}}_{est,t+1} = \frac{1}{2} {}^{I}_{W}\mathbf{\hat{q}}_{est,t}\otimes \begin{bmatrix} 0, {}^{I}\omega_{t+1} \end{bmatrix}^T $$
+
+- **Step 3: Fuse Measurements** <br> Fuse the measurments from both the acc and gyro to obtain the estimated attitude $$ {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}$$. <br>
+<center> $$ {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1} = \gamma_{t+1} {}^{I}_{W}\mathbf{\hat{q}}_{\nabla, t+1} + \left( 1 - \gamma_{t+1} \right) {}^{I}_{W}\mathbf{q}_{\omega, t+1}
+$$ </center> <br>
+Here $$ \gamma_{t+1} \in [0, 1]$$. 
+
+**Repeat steps 1 to 3 for every time instant.** 
 
