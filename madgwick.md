@@ -71,8 +71,7 @@ $$ J\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}, {}^{W}\mathbf{\hat{g}} \right)
 -2q_3 & 2q_4 & -2q_1 & 2q_2 \\
 2q_2 & 2q_1 & 2q_4 & 2q_3 \\
 0 & -4q_2 & -4q_3 & 0\\
-\end{bmatrix} $$
-
+\end{bmatrix} $$ <br>
 Update Term (Attitude component from acc measurements) is given by 
 
 $$
@@ -89,11 +88,6 @@ $$
 
 $$
 {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1} = \gamma_{t+1} {}^{I}_{W}\mathbf{\hat{q}}_{\nabla, t+1} + \left( 1 - \gamma_{t+1} \right) {}^{I}_{W}\mathbf{q}_{\omega, t+1}
-$$ 
-
-<p>
+$$ <br>
 Here $$ \gamma_{t+1} \in [0, 1]$$. <br>
-<br>
-
 Repeat steps 1 to 3 for every time instant. 
-</p>
