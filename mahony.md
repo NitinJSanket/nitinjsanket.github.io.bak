@@ -76,25 +76,28 @@ Following are the steps for attitude estimation using a Mahony filter (Refer to 
 $$ \mathbf{e}_{t+1} =  {}^I\mathbf{\hat{a}}_{t+1} \times \mathbf{v}\left( {}^{I}_{W}\mathbf{\hat{q}}_{est, t} \right) $$ <br> 
 $$ \mathbf{e}_{i, t+1} = \mathbf{e}_{i, t} + \mathbf{e}_{t+1} \Delta t$$ <br>
 </center>	
-Here, \\(\Delta t\\) is the time elapsed between two samples at \\(t\\) and \\(t+1\\). 
+Here, \\(\Delta t\\) is the time elapsed between two samples at \\(t\\) and \\(t+1\\). Look at green parts in Fig. 1.
 
 
 - **Step 3: Update Gyro Measurements using PI Compensation (Fusion)** <br> Compute updated gyro measurements after the application of the PI compensation term (sensor fusion using feedback).<br>
 <center> 
 $$ {}^{I}\mathbf{\omega}_{t+1} = {}^{I}\mathbf{\omega}_{t+1} + \mathbf{K}_p\mathbf{e}_{t+1} + \mathbf{K}_i\mathbf{e}_{i, t+1} $$ <br>
 </center> 
+Look at red parts in Fig. 1.
+
 
 - **Step 4: Orientation increment from Gyro** <br> Compute orientation increment from gyro measurements.<br>
 <center> $$
 {}^{I}_{W}\mathbf{\dot{q}}_{\omega,t+1} = \frac{1}{2} {}^{I}_{W}\mathbf{\hat{q}}_{est,t}\otimes \begin{bmatrix} 0, {}^{I}\omega_{t+1} \end{bmatrix}^T $$ <br>
 </center> 
-Here, \\(\otimes\\) denotes quaternion multiplication. 
+Here, \\(\otimes\\) denotes quaternion multiplication. Look at blue parts in Fig. 1.
 
 
 - **Step 5: Numerical Integration** <br> Compute orientation by integrating orientation increment.<br>
 <center> $$
 {}^{I}_{W}\mathbf{q}_{est,t+1} = {}^{I}_{W}\mathbf{\hat{q}}_{est,t} + {}^{I}_{W}\mathbf{\dot{q}}_{\omega,t+1} \Delta t  $$ <br>
 </center> 
+Look at yellow parts in Fig. 1.
 
 **Repeat steps 1 to 5 for every time instant.** <br>
 
