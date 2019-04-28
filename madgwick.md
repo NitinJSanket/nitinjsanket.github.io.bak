@@ -10,6 +10,7 @@ sitemap:
 
 - [Mathematical Model of an IMU](#mathimu)
 - [Madgwick Filter](#madgwickfilt)
+- [References](#ref)
 
 
 <a name='mathimu'></a>
@@ -117,3 +118,9 @@ Here, \\(\Delta t\\) is the time elapsed between two samples at \\(t\\) and \\(t
 **Repeat steps 1 to 3 for every time instant.** <br>
 
 In a Madgwick filter, the only tunable parameter is trade off parameter $$\beta$$ which determines when the gyro has to take over the acc. Also, the user needs to specify the initial estimates of the attitude, biases and sampling time. The initial attitude can be assumed to be zero if th device is at rest or it has to be obtained by external sources such as a motion capture system or a camera. The bias is computed by taking an average of samples with the IMU at rest and computing the mean value. Note that this bias changes over time and the filter will start to drift over time. The sampling time is the inverse of the operating frequency of the IMU and is specified generally at the driver level.
+
+<a name='ref'></a>
+
+## References
+
+- Sebastian OH Madgwick, Andrew JL Harrison, and Ravi Vaidyanathan. [Estimation of IMU and MARG orientation using a gradient descent algorithm.](https://ieeexplore.ieee.org/document/5975346) 2011 IEEE international conference on rehabilitation robotics. IEEE, 2011.

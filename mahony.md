@@ -10,6 +10,7 @@ sitemap:
 
 - [Mathematical Model of an IMU](#mathimu)
 - [Mahony Filter](#mahonyfilt)
+- [References](#ref)
 
 
 <a name='mathimu'></a>
@@ -57,9 +58,9 @@ Following are the steps for attitude estimation using a Mahony filter (Refer to 
 
 
 <div class="fig fighighlight">
-  <img src="https://nitinjsanket.github.io/assets/img/tutorials/MadgwickFilterOverview.png" width="100%">
+  <img src="https://nitinjsanket.github.io/assets/img/tutorials/MahonyFilterOverview.png" width="100%">
   <div class="figcaption">
-  	Fig 1: Overview of Madgwick Filter.
+  	Fig 1: Overview of Mahony Filter.
   </div>
   <div style="clear:both;"></div>
 </div> <br>
@@ -98,3 +99,9 @@ Here, \\(\otimes\\) denotes quaternion multiplication.
 **Repeat steps 1 to 5 for every time instant.** <br>
 
 In a Mahony filter, the only tunable parameters are the PI compensator gians $$\mathbf{K}_p$$ and $$\mathbf{K}_i$$. Also, the user needs to specify the initial estimates of the attitude, biases and sampling time. The initial attitude can be assumed to be zero if th device is at rest or it has to be obtained by external sources such as a motion capture system or a camera. The bias is computed by taking an average of samples with the IMU at rest and computing the mean value. Note that this bias changes over time and the filter will start to drift over time. The sampling time is the inverse of the operating frequency of the IMU and is specified generally at the driver level.
+
+<a name='ref'></a>
+
+## References
+
+- Robert Mahony, Tarek Hamel, and Jean-Michel Pflimlin. [Nonlinear complementary filters on the special orthogonal group.](https://ieeexplore.ieee.org/document/4608934) IEEE Transactions on automatic control 53.5 (2008): 1203-1217.

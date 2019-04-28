@@ -10,6 +10,7 @@ sitemap:
 
 - [What is an IMU?](#whatisanimu)
 - [Complementary Filter](#cf)
+- [References](#ref)
 
 
 <a name='whatisanimu'></a>
@@ -61,4 +62,9 @@ Here the gyro data is integrated to obtain angles.
 
 - Why you cant just integrate gyros?
 - Why you cant rely just on acc?
-- References
+
+<a name='ref'></a>
+
+## References
+
+- [My IMU estimation experience blog](https://sites.google.com/site/myimuestimationexperience/filters/complementary-filter)
