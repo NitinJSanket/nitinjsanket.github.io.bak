@@ -9,6 +9,7 @@ sitemap:
 ## Table of Contents:
 
 - [What is an IMU?](#whatisanimu)
+- [Mathematical Model of an IMU](#mathimu)
 - [Complementary Filter](#cf)
 - [References](#ref)
 
@@ -29,6 +30,34 @@ Also, note that the readings from an IMU are greatly affected by temparature cha
 A combination of 3 gyros and 3 acc (one in each of $$X, Y, Z$$ axis) is called a 6-DoF IMU. 
 
 A 9-DoF IMU also includes a 3-axis magnetometer which measures Earth's magnetic field which can be used to obtain orientation information. However, for indoor operation which has a lot of metal structures, the magnetometer is generally inaccurate as is exluded from the data fusion. The magnetometer is also often called the **Digital Compass** as it can be directly used to compute the North pole direction. 
+
+<a name='mathimu'></a>
+
+## Mathematical Model of an IMU
+
+<br>
+If you don't know what an IMU is, I would recommend going through my [What is an IMU? tutorial](tutorials/attitudeest/imu).
+
+Let us assume that our IMU is a 6-DoF one, i.e., it has a 3 axis gyro and a 3 axis acc. A 9-DoF IMU is commonly called MARG (Magnetic, Angular Rate and Gravity) sensor. A simple mathematical model of the gyro and acc is given below.
+
+Gyroscope Model:<br>
+
+$$ \omega = \hat{\omega} + \mathbf{b}_g + \mathbf{n}_g $$
+
+Here, $$\omega$$ is the measured angular velocity from the gyro, $$\hat{\omega}$$ is the latent ideal angular velocity we wish to recover, $$\mathbf{b}_g$$ is the gyro bias which changes with time and other factors like temparature, $$\mathbf{n}_g$$ is the white gaussian gyro noise.
+
+The gyro bias is modelled as $$ \mathbf{\dot{b}}_g = \mathbf{b}_{bg}(t) \sim \mathcal{N}(0, Q_g) $$ where $$ Q_g$$ is the covariance matrix which models gyro noise. 
+
+
+Accelerometer Model:<br>
+
+$$ \mathbf{a} = R^T(\mathbf{\hat{a}} - \mathbf{g}) + \mathbf{b}_a + \mathbf{n}_a $$
+
+Here, $$\mathbf{a}$$ is the measured acceleration from the acc, $$\mathbf{\hat{a}}$$ is the latent ideal acceleration we wish to recover, $$R$$ is the orientation of the sensor in the world frame, $$\mathbf{g}$$ is the acceleration due to gravity in the world frame, $$\mathbf{b}_a$$ is the acc bias which changes with time and other factors like temparature, $$\mathbf{n}_a$$ is the the white gaussian acc noise.
+
+The acc bias is modelled as $$ \mathbf{\dot{b}}_a = \mathbf{b}_{ba}(t) \sim \mathcal{N}(0, Q_a) $$ where $$ Q_a$$ is the covariance matrix which models acc noise. 
+
+Here the orientation of the sensor is either known from external sources such as a motion capture system or a camera or estimated by sensor fusion. 
 
 <a name='cf'></a>
 
