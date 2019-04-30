@@ -100,9 +100,6 @@ $$ Ang_{t+1} = (1 - \alpha)(Ang_t + \mathbf{\omega}_{t+1}dt) + \alpha\mathbf{a}_
  
 Here the gyro data is integrated to obtain angles.
 
-- Why you cant just integrate gyros?
-- Why you cant rely just on acc?
-
 <a name='ref'></a>
 
 ## References
