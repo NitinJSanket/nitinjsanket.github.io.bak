@@ -10,6 +10,7 @@ sitemap:
 
 - [What is an IMU?](#whatisanimu)
 - [Mathematical Model of an IMU](#mathimu)
+- [Isn't Attitude Estimation trivial?](#trivial)
 - [Complementary Filter](#cf)
 - [References](#ref)
 
@@ -23,20 +24,19 @@ An IMU is the abbreviation for **Inertial Measurement Unit**. It generally comes
 
 The first component of an IMU is called the **Gyroscope** or **Gyro** and it measures the angular velocity across an axis. So, you would need 3 gyros to compute angles in 3D. The best part about a gyro is that it is not affected by external forces and acceleration. Gyros work very well under dynamic conditions when rotational velocities are high, however they drift significantly with regard to time. Hence, the simplest filtering operation perfromed on gyro data is a high pass filter to remove low frequency drift. 
 
-The second component of an IMU is called the **Accelerometer** or **Acc** and it measures the effective acceleration along an axis.  So, you would need 3 acc to compute angles in 3D given information about external forces. Acc are affected by vibration and other external forces and hence cannot be directly used for computing angles/attitude accurately. However, an acc works well in static conditions as opposed to the gyro. Hece, the simplest filtering operation perfromed on acc data is a low pass filter to remove dynamic noise from vibrations and other external factors. 
+The second component of an IMU is called the **Accelerometer** or **Acc** and it measures the effective acceleration along an axis.  So, you would need 3 acc to compute angles in 3D given information about external forces. Acc are affected by vibration and other external forces and hence cannot be directly used for computing angles/attitude accurately. However, an acc works well in static conditions as opposed to the gyro. Hence, the simplest filtering operation perfromed on acc data is a low pass filter to remove dynamic noise from vibrations and other external factors. 
 
-Also, note that the readings from an IMU are greatly affected by temparature changes. The noise changes with temparature and as the IMU is being used to "heating up" of the sensor. 
+Also, note that the readings from an IMU are greatly affected by temparature changes. The noise changes with temparature and as the IMU is being used due to "heating up" of the sensor. 
 
 A combination of 3 gyros and 3 acc (one in each of $$X, Y, Z$$ axis) is called a 6-DoF IMU. 
 
-A 9-DoF IMU also includes a 3-axis magnetometer which measures Earth's magnetic field which can be used to obtain orientation information. However, for indoor operation which has a lot of metal structures, the magnetometer is generally inaccurate as is exluded from the data fusion. The magnetometer is also often called the **Digital Compass** as it can be directly used to compute the North pole direction. 
+A 9-DoF IMU also includes a 3-axis magnetometer which measures Earth's magnetic field which can be used to obtain orientation information as well. However, for indoor operation which has a lot of metal structures, the magnetometer is generally inaccurate as is exluded from the data fusion. The magnetometer is also often called the **Digital Compass** as it can be directly used to compute the North pole direction. 
 
 <a name='mathimu'></a>
 
 ## Mathematical Model of an IMU
 
 <br>
-If you don't know what an IMU is, I would recommend going through my [What is an IMU? tutorial](tutorials/attitudeest/imu).
 
 Let us assume that our IMU is a 6-DoF one, i.e., it has a 3 axis gyro and a 3 axis acc. A 9-DoF IMU is commonly called MARG (Magnetic, Angular Rate and Gravity) sensor. A simple mathematical model of the gyro and acc is given below.
 
@@ -58,6 +58,17 @@ Here, $$\mathbf{a}$$ is the measured acceleration from the acc, $$\mathbf{\hat{a
 The acc bias is modelled as $$ \mathbf{\dot{b}}_a = \mathbf{b}_{ba}(t) \sim \mathcal{N}(0, Q_a) $$ where $$ Q_a$$ is the covariance matrix which models acc noise. 
 
 Here the orientation of the sensor is either known from external sources such as a motion capture system or a camera or estimated by sensor fusion. 
+
+<a name='trivial'></a>
+
+## Isn't Attitude Estimation trivial?
+
+<br>
+You might be thinking if the gyro gives angular acceleration wouldn't attitude estimation be as trivial as integrating these measurements. You would be right! In an **ideal** world this would work perfectly and we would have the perfect attitude. However, real world is very different and the gyro has both an unknown changing bias and noise. Even if you want the system to work for a small amount of time, say 4 sec where you could assume that the bias doesnt change and can be obtained as averaging measurements when the gyro is at rest. The noise though being small accumulates over time when integrated eventually becoming unbounded in magnitude completely masking the signal. 
+
+Keen readers might think, why cant we just low pass filter this signal and then integrate? This is a good idea but would cause a significant lag in the measurements and alter the magnitudes of the high frequency signals where gyro works well. This is no good for us. Also, note that integtation works as a form of [low pass filtering](https://webhome.phy.duke.edu/~schol/phy271/faqs/faq8/node6.html). 
+
+Next, one might be thinking why cant we use acc measurements to estimate attitude when only gravity is acting on it? The answer is yes you can do it in an **ideal world**. In reality, the measurements are too noisy and don't work well when the device is in motion or for high speed motion. Hence necessitating fusing both these sensors. The gyro works well at higher frequency motion (fast movements but drifts over time) while the acc works well at lower frequency motion (works well over long period of time but is inaccurate for fast motion). The gyro and acc have complementary errors, i.e., both are errnoeous but in different bands of the frequency spectrum and hence can be fused to get much more accurate measurements then one could ever get with either of the sensors separately. Hence the name **Complementary Filter** which is described next. 
 
 <a name='cf'></a>
 
@@ -97,3 +108,4 @@ Here the gyro data is integrated to obtain angles.
 ## References
 
 - [My IMU estimation experience blog](https://sites.google.com/site/myimuestimationexperience/filters/complementary-filter)
+- [IMU Attitude Estimation](http://philsal.co.uk/projects/imu-attitude-estimation)
