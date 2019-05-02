@@ -9,3 +9,4 @@ order: 3
 	- [What is an IMU? and Complementary Filter](attitudeest/imu)
 	- [Mahony Filter](attitudeest/mahony)
 	- [Madgwick Filter](attitudeest/madgwick)
+	- [Kalman Filter](attitudeest/kf)
