@@ -102,14 +102,12 @@ Now, let's look at how these vectors and matrices look for our particular case o
 
 Let the state vector be given by<br>
 <center>
-$$
-\mathbf{x} = \begin{bmatrix}
+$$ \mathbf{x} = \begin{bmatrix}
 \phi \\
 \theta \\ 
 \psi \\
 \mathbf{b}_g
-\end{bamtrix}
-$$ <br>
+\end{bamtrix}$$ <br>
 </center>
 Here, $$\mathbf{b}_g \in \mathbb{R}^{3 \times 1} $$ denotes the gyro bias in 3D. 
 
