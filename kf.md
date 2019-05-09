@@ -93,20 +93,12 @@ $$
 </center>
 Here, $$\mathbf{b}_{g,t} \in \mathbb{R}^{3 \times 1} $$ denotes the gyro bias in 3D. 
 
-Following are the steps for attitude estimation using a Kalman filter (Refer to Fig. 1 shown below for an overview of the algorithm).
-
-<div class="fig fighighlight">
-  <img src="https://nitinjsanket.github.io/assets/img/tutorials/MadgwickFilterOverview.png" width="100%">
-  <div class="figcaption">
-  	Fig 1: Overview of Madgwick Filter.
-  </div>
-  <div style="clear:both;"></div>
-</div> <br>
+Following are the steps for attitude estimation using a Kalman filter.
 
 - **Step 1: Obtain sensor measurements**<br> Obtain gyro and acc measurements from the sensor. Let $${}^I\omega_t$$ and $${}^I\mathbf{a}_t$$ denote the gyro and acc measurements respectively.
 
 
-- **Step 2: Predict the next state based on gyro measurements**<br> Compute the predicted next state using the system dynamics. Note that in a KF each state is characterized by its mean and co-variance matrix.<br>
+- **Step 2: Process Update using Gyro Measurements (Prediction)**<br> Compute the predicted next state using the system dynamics. Note that in a KF each state is characterized by its mean and co-variance matrix.<br>
 <center> $$ 
 \hat{\mu_{t+1}} = \mathbf{A}_{t+1}\hat{\mu_{t}} + \mathbf{B}_{t+1}\mathbf{u}_{t+1}$$ <br>
 $$
@@ -128,7 +120,7 @@ $$
 $$ <br>
 </center>
 
-If no correction is given this prediction would drift due to error in process model. The process model in our case models a constant attitude within the small time instant but the bias integrates over this small time $$\Delta t$$. Also, $$\mathbf{u}_{t+1}$$ represents the input/process vector (in our case this is the vector of euler angle velocities of the IMU in world frame) and is given by <br> 
+Here, \\(\Delta t\\) is the time elapsed between two samples at \\(t\\) and \\(t+1\\). If no correction is given this prediction would drift due to error in process model. The process model in our case models a constant attitude within the small time instant but the bias integrates over this small time $$\Delta t$$. Also, $$\mathbf{u}_{t+1}$$ represents the input/process vector (in our case this is the vector of euler angle velocities of the IMU in world frame) and is given by <br> 
 
 <center>
 $$
@@ -172,29 +164,57 @@ $$<br>
 
 Here, the bias is assumed to be not dependent on the attitude which might not be true in real life.<br>
 
+- **Step 3: Measurement Update using Acc Measurements (Fusion or Correction)** <br> 
+In this step, compute the attitude using acc measurements and use it to obtain the corrected state, i.e., state which is a combination of both the process and measurement steps. This step entails the sensor fusion. <br>
 
-- **Step 3: Orientation increment from Gyro** <br> Compute orientation increment from gyro measurements (numerical integration).<br>
-<center> $$
-{}^{I}_{W}\mathbf{\dot{q}}_{\omega,t+1} = \frac{1}{2} {}^{I}_{W}\mathbf{\hat{q}}_{est,t}\otimes \begin{bmatrix} 0, {}^{I}\omega_{t+1} \end{bmatrix}^T $$ <br>
-</center> 
-
-Look at blue parts in Fig. 1.
-
-
-- **Step 3: Fuse Measurements** <br> Fuse the measurments from both the acc and gyro to obtain the estimated attitude $$ {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1}$$. <br>
-<center> 
+<center>
 $$
-{}^{I}_{W}\mathbf{\dot{q}}_{est, t+1} = {}^{I}_{W}\mathbf{\dot{q}}_{\omega, t+1} + {}^{I}_{W}\mathbf{q}_{\nabla, t+1} 
-$$ <br>
-$$ {}^{I}_{W}\mathbf{q}_{est, t+1} = {}^{I}_{W}\mathbf{\hat{q}}_{est, t+1} + {}^{I}_{W}\mathbf{\dot{q}}_{est, t+1} \Delta t 
-$$  </center> <br>
-Here, \\(\Delta t\\) is the time elapsed between two samples at \\(t\\) and \\(t+1\\). Look at red parts in Fig. 1.
+\mathbf{K}_{t+1} = \hat{\Sigma_{t+1}}\mathbf{C}^T \left( \mathbf{C} \hat{\Sigma_{t+1}} \mathbf{C}^T + \mathbf{R} \right)^{-1}
+$$<br>
+$$
+\mu_{t+1} = \hat{\mu_{t+1}} + \mathbf{K}_{t+1} \left( \mathbf{z}_{t+1} - \mathbf{C} \hat{\mu_{t+1}}\right)
+$$<br>
+$$
+\Sigma_{t+1} = \hat{\Sigma_{t+1}} - \mathbf{K}_{t+1}\mathbf{C}\hat{\Sigma_{t+1}}
+$$<br>
+</center>
 
-**Repeat steps 1 to 3 for every time instant.** <br>
+Here, $$\mathbf{z}_{t+1}$$ denotes the observable state by the sensor (this could be a subset of the full state as in our case). The acc is used to obtain the angles as follows <br>
+
+<center>
+$$
+\phi = \tan^{-1}\left( \frac{a_y}{\sqrt{a_x^2 + a_z^2}} \right)
+$$ <br>
+$$
+\theta = \tan^{-1}\left( \frac{a_x}{\sqrt{a_y^2 + a_z^2}} \right)
+$$ <br>
+<br>
+</center>
+
+Here, $$\mathbf{C}$$ denotes the mapping from observed state to full state and is given by <br>
+
+<center>
+$$
+\mathbf{C} = \begin{bmatrix}
+1 & 0 & 0 & 0 & 0 & 0\\
+0 & 1 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+\end{bmatrix}
+$$ <br>
+</center>
+
+Note that, in our case we don't use the value of $$\psi$$ from the acc readings as it is generally inaccurate. In a real robotic system, the value of $$\psi$$ is obtained from a camera or a compass. The rows of all zeros in $$\mathbf{C}$$ indicate unobservable values in the state vector $$\mathbf{x}$$. 
+
+**Repeat steps 1 and 2 for every time instant and step 3 whenever a measurement update from acc is available.** The measurement update is generally run about a factor of magnitude slower than the process update for keeping computation complexity low. <br>
 
 
 <a name='ref'></a>
 
 ## References
 
-- Sebastian OH Madgwick, Andrew JL Harrison, and Ravi Vaidyanathan. [Estimation of IMU and MARG orientation using a gradient descent algorithm.](https://ieeexplore.ieee.org/document/5975346) 2011 IEEE international conference on rehabilitation robotics. IEEE, 2011.
+- [IMU Attitude Estimation](http://philsal.co.uk/projects/imu-attitude-estimation)
+- Nitin J. Sanket. [Orientation Tracking based Panorama Stiching using Unscented Kalman Filter.](https://github.com/NitinJSanket/ESE650Project2/blob/master/Report/ESE650Project2.pdf)
+- [Does anyone have a 6-DOF IMU Kalman Filter?](https://www.researchgate.net/post/Does_anyone_have_a_6-DOF_IMU_Kalman_Filter)
