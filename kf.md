@@ -48,20 +48,27 @@ Here the orientation of the sensor is either known from external sources such as
 ## Kalman Filter
 
 <br>
-Before we start talking about the kalman filter formulation, let us formally define coordinate axes we will use. Let the letters $$I, W, B$$ denote inertial, world and body frames respectively. Generally $$B$$ and $$I$$ are the same but they don't have to be. A pre-subscript denotes the source coordinate frame and a pre-superscript denotes the destination coordinate frame. For eg., $${}^{B}_{A}X$$ transforms $$X$$ from coordinate frame $$A$$ to $$B$$. If only a pre-superscript is present, it means that the quantity was measured and is represented in the same coordinate frame represented by the pre-superscript.
+Before we start talking about the Kalman Filter (KF) formulation, let us formally define coordinate axes we will use. Let the letters $$I, W, B$$ denote inertial, world and body frames respectively. Generally $$B$$ and $$I$$ are the same but they don't have to be. A pre-subscript denotes the source coordinate frame and a pre-superscript denotes the destination coordinate frame. For eg., $${}^{B}_{A}X$$ transforms $$X$$ from coordinate frame $$A$$ to $$B$$. If only a pre-superscript is present, it means that the quantity was measured and is represented in the same coordinate frame represented by the pre-superscript.
 
-The desired output is to estimate the attitude/angle/orientation of the IMU sensor in the world frame, i.e., estimating $$[\phi, \theta, \psi]^T$$. 
+The desired output is to estimate the attitude/angle/orientation of the IMU sensor in the world frame, i.e., estimating $$[\phi, \theta, \psi]^T$$ which is commonly called **Roll, Pitch** and **Yaw** respectively. These are commonly interchanged with **Euler Angles**. However they **ARE NOT THE SAME**. Euler Angles can vary in convention and is generally chosen from 12 unique combinations. For our discussion we'll use Z-Y-X Euler Angles which we'll also refer to as Roll, Pitch and Yaw for X, Y and Z axes respectively. For a detailed explanation [refer to this awesome explanation by Peter Corke](https://petercorke.com/wordpress/roll-pitch-yaw-angles).
 
-In any of the filters we looked at before there was a tradeoff parameter which determined when the filter should trust which sensor more (gyro or acc). However, these parameters didn't have much physical significance and is hard to tune. Also, it seems that changing these parameters at every time instant would yeild the best results. A **Kalman Filter** does this in a theoretically optimal fashion. 
+In any of the filters we looked at before there was a tradeoff parameter which determined when the filter should trust which sensor more (gyro or acc). However, these parameters didn't have much physical significance and is hard to tune. Also, it seems that changing these parameters at every time instant would yield the best result. A **Kalman Filter** (KF) does this in a theoretically optimal fashion. <br> 
 
-A Kalman filter formulates this problem as minimizing a quadratic cost function. This cost function includes the sensor noise (how much should you trust each sensor) as well as the underlying dynamics of the system (is the IMU placed on a car/quadrotor/hand-held). What if you don't really know where the sensor is going to be used? The answer is simple - you craft a generic enough system dynamics model which would work "well" in most scenarios. 
+A KF formulates this problem (state estimation or attitude estimation in our case) as minimizing a quadratic cost function with respect to the latent correct space and the estimated space. This cost function includes the sensor noise (how much should you trust each sensor) as well as the underlying dynamics of the system (is the IMU placed on a car/quadrotor/hand-held). What if you don't really know where the sensor is going to be used? The answer is simple - you craft a generic enough system dynamics model which would work "well" in most scenarios. <br>
+
+The aim of a KF is to estimate a **state** (a vector of time varying quantities) given the data from one or more sensors and the knowledge of a process model/system dynamics ("how" the system is moving). The magic of a Kalman filter is that it dynamically weights the estimates from both the process model and sensor measurements. Note that the state could have variables not of all which can be measured like the bias of a gyroscope in our case. This can still be used in the process update. Such a state when not all the variables are not obeserved are called **Augmented State**. <br>
+
+A KF operates in two steps, i.e., **process update** and **measurement update**. In the process update, the filter uses measurements from a sensor and underlying system dynamics to predict the future state. This is the best you can do withou a measurement update and the estimated state would drift over time. This drift is directly proportional to the amount of error in the process model (how accurately does your process model resemble the real world?). <br>
+
+In the measurement update, the filter uses measurements from another sensor (hopefully complementary in error to that used in process model) to correct for errors in predicted state. However, none of the sensors used are perfect, how do you trust one more than the other? Simple, you only model the noise charactersistics of each sensor, i.e., the designer's opinion of accuracy of these sensors. You can obtain this from the manufacturer's datasheet or by experimentally obtaining these values. <br>
+
+Now, let's look at the assumptions a Linear Kalman Filter or Kalman filter formulation makes to obtain the mathematical model.
 
 <a name='assumptions'></a>
 
 ### Assumptions
 
 <br>
-Let's first look at the assumptions a Linear Kalman Filter or a Kalman Filter makes. 
 - All the noise in the system (process noise and measurement noise) is additive white Gaussian noise
 - The prior state is modelled by a Gaussian distribution
 - Both the process and measurement model is linear
@@ -74,8 +81,19 @@ Let's first look at the assumptions a Linear Kalman Filter or a Kalman Filter ma
 <br>
 Now let's look at the mathematical formulation of a Kalman Filter. 
 
-The filter starts by taking as input the current state to predict the future state. Now, you might be wondering what a state is? A state in a Kalman filter is a vector which you would like to estimate. In our case, we would like to estimate the attitude of the IMU. Along with estimating the attitude we would also like to estimate the bias of the gyro so that we could get more accurate estimation. 
+The filter starts by taking as input the current state to predict the future state. Now, you might be wondering what a state is? As discussed before, a state in a Kalman filter is a vector which you would like to estimate. In our case, we would like to estimate the attitude of the IMU. Along with estimating the attitude we would also like to estimate the bias of the gyro so that we could get more accurate estimation. Let us denote our state at time $$t$$ by $$\mathbf{x}_t$$ and is given by <br>
 
+<center>
+$$
+\mathbf{x}_t = \begin{bmatrix}
+\phi_t \\ 
+\theta_t \\ 
+\psi_t \\
+\mathbf{b}_{g,t}
+\end{bmatrix}
+$$
+</center>
+Here, $$\mathbf{b}_g \in \mathbb{R}^{3 \times 1} $$ denotes the gyro bias in 3D. 
 
 Following are the steps for attitude estimation using a Kalman filter (Refer to Fig. 1 shown below for an overview of the algorithm).
 
@@ -95,11 +113,13 @@ Following are the steps for attitude estimation using a Kalman filter (Refer to 
 \hat{\mu_{t+1}} = \mathbf{A}_{t+1}\hat{\mu_{t}} + \mathbf{B}_t\hat{\mathbf{u}_{t}}$$ <br>
 $$
 \hat{\Sigma_{t+1}} = \mathbf{A}_{t+1}\hat{\Sigma_{t}}\mathbf{A}_{t+1}^T + \mathbf{Q}_{t+1}$$
-$$ <br></center>	
+ <br></center>
+
 Here, $$ \mu_t$$, $$\Sigma_t$$ denote the mean and co-variance of the state at time $$t$$ and $$\hat{\mu_{t+1}}, \hat{\Sigma_{t+1}}$$ denotes the estimated mean and co-variance of the state at time $$t+1$$. $$\mathbf{Q}_{t+1}$$ denotes the noise matrix modelling how noisy the system dynamics model is. Here, $$\mathbf{A}_{t+1}$$ denotes the **process/dynamics/system model** which mathematically models how the state changes from $$t$$ to $$t+1$$. If no correction is given this prediction would drift due to error in process model. 
 
 Now, let's look at how these vectors and matrices look for our particular case of attitude estimation. <br>
 
+<!--
 Let the state vector be given by<br>
 <center>
 $$ 
@@ -111,7 +131,8 @@ $$
 \end{bmatrix}
 $$ <br>
 </center>
-Here, $$\mathbf{b}_g \in \mathbb{R}^{3 \times 1} $$ denotes the gyro bias in 3D. 
+-->
+
 
 - **Step 2 (b): Orientation increment from Gyro** <br> Compute orientation increment from gyro measurements (numerical integration).<br>
 <center> $$
