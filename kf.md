@@ -106,7 +106,7 @@ Following are the steps for attitude estimation using a Kalman filter (Refer to 
 - **Step 1: Obtain sensor measurements**<br> Obtain gyro and acc measurements from the sensor. Let $${}^I\omega_t$$ and $${}^I\mathbf{a}_t$$ denote the gyro and acc measurements respectively.
 
 
-- **Step 2: Predict the next state**<br> Compute the predicted next state using the system dynamics. Note that in a KF each state is characterized by its mean and co-variance matrix.<br>
+- **Step 2: Predict the next state based on gyro measurements**<br> Compute the predicted next state using the system dynamics. Note that in a KF each state is characterized by its mean and co-variance matrix.<br>
 <center> $$ 
 \hat{\mu_{t+1}} = \mathbf{A}_{t+1}\hat{\mu_{t}} + \mathbf{B}_{t+1}\mathbf{u}_{t+1}$$ <br>
 $$
@@ -143,7 +143,7 @@ $$
 \dot{\phi}\\
 \dot{\theta}\\
 \dot{\psi}\\
-\end{matrix} = \mathbf{R}^{-1} {}^I\omega_t  
+\end{bmatrix} = \mathbf{R}^{-1} {}^I\omega_t  
 $$ <br>
 $$
 \mathbf{R} = \begin{bmatrix}
@@ -173,7 +173,7 @@ $$<br>
 Here, the bias is assumed to be not dependent on the attitude which might not be true in real life.<br>
 
 
-- **Step 2 (b): Orientation increment from Gyro** <br> Compute orientation increment from gyro measurements (numerical integration).<br>
+- **Step 3: Orientation increment from Gyro** <br> Compute orientation increment from gyro measurements (numerical integration).<br>
 <center> $$
 {}^{I}_{W}\mathbf{\dot{q}}_{\omega,t+1} = \frac{1}{2} {}^{I}_{W}\mathbf{\hat{q}}_{est,t}\otimes \begin{bmatrix} 0, {}^{I}\omega_{t+1} \end{bmatrix}^T $$ <br>
 </center> 
