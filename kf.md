@@ -67,8 +67,6 @@ Now, let's look at the assumptions a Linear Kalman Filter or Kalman filter formu
 <a name='assumptions'></a>
 
 ### Assumptions
-
-<br>
 - All the noise in the system (process noise and measurement noise) is additive white Gaussian noise
 - The prior state is modelled by a Gaussian distribution
 - Both the process and measurement model is linear
@@ -93,7 +91,7 @@ $$
 \end{bmatrix}
 $$
 </center>
-Here, $$\mathbf{b}_g \in \mathbb{R}^{3 \times 1} $$ denotes the gyro bias in 3D. 
+Here, $$\mathbf{b}_{g,t} \in \mathbb{R}^{3 \times 1} $$ denotes the gyro bias in 3D. 
 
 Following are the steps for attitude estimation using a Kalman filter (Refer to Fig. 1 shown below for an overview of the algorithm).
 
@@ -108,30 +106,71 @@ Following are the steps for attitude estimation using a Kalman filter (Refer to 
 - **Step 1: Obtain sensor measurements**<br> Obtain gyro and acc measurements from the sensor. Let $${}^I\omega_t$$ and $${}^I\mathbf{a}_t$$ denote the gyro and acc measurements respectively.
 
 
-- **Step 2: Predict the next state**<br> Compute the predicted next state using the system dynamics. <br>
+- **Step 2: Predict the next state**<br> Compute the predicted next state using the system dynamics. Note that in a KF each state is characterized by its mean and co-variance matrix.<br>
 <center> $$ 
-\hat{\mu_{t+1}} = \mathbf{A}_{t+1}\hat{\mu_{t}} + \mathbf{B}_t\hat{\mathbf{u}_{t}}$$ <br>
+\hat{\mu_{t+1}} = \mathbf{A}_{t+1}\hat{\mu_{t}} + \mathbf{B}_{t+1}\mathbf{u}_{t+1}$$ <br>
 $$
 \hat{\Sigma_{t+1}} = \mathbf{A}_{t+1}\hat{\Sigma_{t}}\mathbf{A}_{t+1}^T + \mathbf{Q}_{t+1}$$
  <br></center>
 
-Here, $$ \mu_t$$, $$\Sigma_t$$ denote the mean and co-variance of the state at time $$t$$ and $$\hat{\mu_{t+1}}, \hat{\Sigma_{t+1}}$$ denotes the estimated mean and co-variance of the state at time $$t+1$$. $$\mathbf{Q}_{t+1}$$ denotes the noise matrix modelling how noisy the system dynamics model is. Here, $$\mathbf{A}_{t+1}$$ denotes the **process/dynamics/system model** which mathematically models how the state changes from $$t$$ to $$t+1$$. If no correction is given this prediction would drift due to error in process model. 
+Here, $$ \mu_t$$, $$\Sigma_t$$ denote the mean and co-variance of the state at time $$t$$ and $$\hat{\mu_{t+1}}, \hat{\Sigma_{t+1}}$$ denotes the estimated mean and co-variance of the state at time $$t+1$$. $$\mathbf{Q}_{t+1}$$ denotes the noise matrix modelling how noisy the system dynamics model is. Here, $$\mathbf{A}_{t+1}$$ denotes the **process/dynamics/system model** which mathematically models how the state changes from $$t$$ to $$t+1$$ and is given below. <br>
 
-Now, let's look at how these vectors and matrices look for our particular case of attitude estimation. <br>
-
-<!--
-Let the state vector be given by<br>
 <center>
-$$ 
-\mathbf{x} = \begin{bmatrix}
-\phi \\
-\theta \\ 
-\psi \\
-\mathbf{b}_g
+$$
+\mathbf{A}_{t+1} = \begin{bmatrix}
+1 & 0 & 0 & -\Delta t & 0 & 0\\
+0 & 1 & 0 & 0 & -\Delta t & 0\\
+0 & 0 & 1 & 0 & 0 & -\Delta t\\
+0 & 0 & 0 & 1 & 0 & 0\\
+0 & 0 & 0 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 0 & 1\\
 \end{bmatrix}
 $$ <br>
 </center>
--->
+
+If no correction is given this prediction would drift due to error in process model. The process model in our case models a constant attitude within the small time instant but the bias integrates over this small time $$\Delta t$$. Also, $$\mathbf{u}_{t+1}$$ represents the input/process vector (in our case this is the vector of euler angle velocities of the IMU in world frame) and is given by <br> 
+
+<center>
+$$
+\mathbf{u}_{t+1} = \begin{bmatrix}
+\dot{\phi}\\
+\dot{\theta}\\
+\dot{\psi}\\
+\end{bmatrix}
+$$<br>
+$$
+\begin{bmatrix}
+\dot{\phi}\\
+\dot{\theta}\\
+\dot{\psi}\\
+\end{matrix} = \mathbf{R}^{-1} {}^I\omega_t  
+$$ <br>
+$$
+\mathbf{R} = \begin{bmatrix}
+\cos \theta & 0 & -\cos \phi \sin \theta \\
+0 & 1 & \sin \phi \\
+\sin \theta & 0 & \cos \phi \cos \theta
+\end{bmatrix}
+$$
+<br>
+</center>
+
+$$\mathbf{B}_{t+1}$$ denotes the mapping of the input vector to the state vector and is given by <br>
+
+<center>
+$$
+\mathbf{B}_{t+1} = \begin{bmatrix}
+\Delta t & 0 & 0\\
+0 & \Delta t & 0\\
+0 & 0 & \Delta t\\
+0 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 0\\
+\end{bmatrix}
+$$<br>
+</center>
+
+Here, the bias is assumed to be not dependent on the attitude which might not be true in real life.<br>
 
 
 - **Step 2 (b): Orientation increment from Gyro** <br> Compute orientation increment from gyro measurements (numerical integration).<br>
