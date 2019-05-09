@@ -216,5 +216,6 @@ Note that, in our case we don't use the value of $$\psi$$ from the acc readings 
 ## References
 
 - [IMU Attitude Estimation](http://philsal.co.uk/projects/imu-attitude-estimation)
+- [MEAM620 Kalman Filter Notes](https://alliance.seas.upenn.edu/~meam620/wiki/index.php?n=Main.Schedule2015?action=download&upname=2015_kalmanFilter.pdf)
 - Nitin J. Sanket. [Orientation Tracking based Panorama Stiching using Unscented Kalman Filter.](https://github.com/NitinJSanket/ESE650Project2/blob/master/Report/ESE650Project2.pdf)
 - [Does anyone have a 6-DOF IMU Kalman Filter?](https://www.researchgate.net/post/Does_anyone_have_a_6-DOF_IMU_Kalman_Filter)
