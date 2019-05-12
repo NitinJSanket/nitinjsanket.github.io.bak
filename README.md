@@ -8,3 +8,4 @@ Nitin's Personal Website
 - [ ] remove note on top bar
 - [ ] Make printer friendly
 
+- Update KF with image and acc measurments in update step
