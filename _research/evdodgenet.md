@@ -1,5 +1,5 @@
 ---
-title: SalientDSO
+title: EVDodgeNet
 order: 1
 img: /assets/img/EVDodgeNet.gif
 publications:
