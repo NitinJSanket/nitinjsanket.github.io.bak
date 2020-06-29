@@ -1,4 +1,0 @@
-1. Create Favicon Icon from: https://realfavicongenerator.net/
-2. Pick colors from: https://www.w3schools.com/colors/colors_picker.asp
-3. Pick Awesome font icons from: http://fontawesome.io/icons/
-4. Print all pages into a pdf and then take snapshot to create pdf thumbnail.

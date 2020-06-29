@@ -1,8 +1,0 @@
-@techreport{techreport,
-  author = {Vidur Bhatnagar, Nitin J. Sanket and Sarath Kumar Barathi},
-  title = {Gender Prediction Using Twitter Data},
-  year = {2015},
-  url = {https://nitinjsanket.github.io/project/cis520/CIS520Report.pdf},
-  note = {CIS520 Final Project Report},
-  institution = {University of Pennsylvania}
-}
